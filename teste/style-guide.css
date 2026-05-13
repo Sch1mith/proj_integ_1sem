@@ -1,0 +1,40 @@
+/*esse root é onde vão ficar a variaves do nosso site, pra ficar mais facil de padronizar tudo*/
+:root{
+    --cor-azul: hsl(199 71% 67%);
+    --cor-azul-contraste: hsl(199 71% 47%);
+    --cor-laranja: hsl(18 100% 62%);
+    --cor-laranja-contraste: hsl(18 100% 55%);
+    --cor-cinza-claro: hsl(0 2% 55%);
+    --cor-cinza-escuro: hsl(0 5% 30%);
+    --cor-branco: hsl(0 0% 95%);
+    --cor-preto: hsl(0 0% 5%);
+    --f-logo: "Quicksand", sans-serif;
+    --f-titulo: 'Outfit', sans-serif;
+    --f-padrao: 'Inter', sans-serif;
+    /*aqui são configurações do bootstrap*/
+    --bs-body-font-family: var(--f-padrao);
+    --bs-primary: var(--cor-laranja-contraste);
+    --bs-primary-rgb: 255, 126, 61;
+    --bs-secondary: var(--cor-azul);
+    --bs-secundary-rgb: 110, 194, 232;
+}
+
+/*utilitários*/
+.c-button{
+    font-family: var(--f-titulo);
+    font-weight: 600;
+    border: var(--cor-preto) 1px solid;
+    box-shadow: 2px 1px 2px var(--cor-cinza-escuro);
+}
+
+.c-button--primary{
+    background-color: var(--cor-laranja-contraste);
+}
+
+.c-button--primary-var{
+    background-color: var(--cor-azul-contraste);
+}
+
+.c-button--secundary{
+    background-color: var(--cor-branco);
+}

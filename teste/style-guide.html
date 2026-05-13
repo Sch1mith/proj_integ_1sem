@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="[http://www.thymeleaf.org](http://www.thymeleaf.org)" lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <!--bootstrap-->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <!--css padrãao-->
+    <link rel="stylesheet" href="./style-guide.css">
+    <title>Ajudaí</title>
+  </head>
+
+  <body>
+
+    <!--aqui vão ficar elementos padrão para usar no site-->
+    <main>
+      <section class="mb-5">
+        <h3>Botões do Sistema</h3>
+        <!-- botão principal -->
+        <button id="#" data-item-id="123" th:attr="data-item-id=${#}" type="button" class="btn btn-primary c-button c-button--primary">
+          Ação Principal
+        </button>
+
+        <!--variação do botão primario-->
+        <button id="#" data-item-id="123" th:attr="data-item-id=${#}" type="button" class="btn btn-primary c-button c-button--primary-var">
+          Ação Principal
+        </button>
+
+        <!-- botão secundário -->
+        <button id="#" data-item-id="123" th:attr="data-item-id=${#}" type="button" class="btn btn-secundary c-button c-button--secondary">
+          Cancelar / Voltar
+        </button>
+      </section>
+    </main>
+
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

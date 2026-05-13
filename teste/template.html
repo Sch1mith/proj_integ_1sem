@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="[http://www.thymeleaf.org](http://www.thymeleaf.org)" lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    rel="stylesheet" href="style-guide.css">
+    <!--bootstrap-->
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <!--css padrãao-->
+    <link rel="stylesheet" href="./style-guide.css">
+    <title>Ajudaí</title>
+  </head>
+
+  <body>
+
+    <!--essa tag é onde a header vai ser injetada pelo springboot-->
+    <header th:replace="~{fragments :: header}"></header>
+
+    <main class="container-fluid">
+      <!--aqui vai ficar o código html dá página-->
+    </main>
+
+    <!--essa tage é onde o footer vai ser injetado pelo springboot-->
+    <footer th:replace="~{fragments :: footer}"></footer>
+
+
+    <!--esse é o script do bootstrap-->
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
