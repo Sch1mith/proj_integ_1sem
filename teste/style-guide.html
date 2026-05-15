@@ -10,14 +10,14 @@
     <!--bootstrap-->
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
     <!--css padrãao-->
-    <link rel="stylesheet" href="./style-guide.css">
+    <link rel="stylesheet" href="./utilities.css">
     <title>Ajudaí</title>
   </head>
 
   <body>
 
     <!--aqui vão ficar elementos padrão para usar no site-->
-    <main>
+    <main style="margin-left: 1rem;">
       <section class="mb-5">
         <h3>Botões do Sistema</h3>
         <!-- botão principal -->
@@ -32,10 +32,54 @@
 
         <!-- botão secundário -->
         <button id="#" data-item-id="123" th:attr="data-item-id=${#}" type="button" class="btn btn-secundary c-button c-button--secondary">
-          Cancelar / Voltar
+          Cancelar
         </button>
+        <hr>
+        <h3>Campo de Texto</h3>
+
+        <!--campo de texto simples-->
+        <p  style="font-family: sans-serif;
+                  color: indigo;
+                  font-size: 1.2rem"> altere o valor em <code>col-md-6</code> para mudar a largura do campo
+        </p>
+
+        <div class="mb-3 col-md-6">
+          <label for="input-item" class="form-label">nome do campo (Ex: login, nome do pedido, etc.)</label>
+          <input type="text"
+                 class="form-control c-input c-input--simple"
+                 id="input-item"
+                 placeholder="altere o texto que fica aqui"
+                 name="nomedoinput">
+        </div>
+
+        <!--campo de texto grande-->
+        <p style="font-family: sans-serif;
+                  color: indigo;
+                  font-size: 1.2rem">altere o valor em <code>col-md-8</code> para alterar a largura do item e altere o valor em
+          <code>rows="3"</code> para alterar a altura
+        </p>
+
+        <div class="mb-3 col-md-8">
+          <label class="form-label">nome do campo</label>
+          <textarea class="form-control c-input c-input--textarea"
+                    rows="3"
+                    placeholder="altere o texto que fica aqui"
+                    name="nomedoinput"></textarea>
+        </div>
+
+        <!--campo de busca-->
+        <div class="mb-3 col-md-8">
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon1">🔍</span>
+            <input type="text" class="form-control c-input c-input--pesquisa" placeholder="Buscar no Ajudaí...">
+          </div>
+        </div>
+
+        <span class="material-symbols"">home</span>
       </section>
     </main>
+
+
 
     <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
   </body>
