@@ -1,7 +1,7 @@
 @font-face{
     font-family: 'Material Symbols';
-    font-style: Regular;
-    font-weight: 80 200;
+    font-style: normal;
+    font-weight: 100 700;
     src: url('./icons/Material_Symbols_Rounded/MaterialSymbolsRounded-VariableFont_FILL,GRAD,opsz,wght.ttf');
 }
 
@@ -19,10 +19,11 @@
     --f-titulo: 'Outfit', sans-serif;
     --f-padrao: 'Inter', sans-serif;
     --f-icons: 'Material Symbols', sans-serif;
-    --icon-weight: 80;
+    --icon-weight: 400;
     --icon-fill: 0; /*mudar par 1 faz o icone ficar preenchido*/
-    --icon-grad: 0: /*altera a espessura do icone*/
-    /*aqui são configurações do bootstrap*/
+    --icon-grad: 0;
+    --icon-opsz: 24;
+/* são configurações do bootstrap*/
     --bs-body-font-family: var(--f-padrao);
     --bs-primary: var(--cor-laranja-contraste);
     --bs-primary-rgb: 255, 126, 61;
@@ -33,21 +34,22 @@
 /*utilitários*/
 .material-symbols{
     font-family: 'Material Symbols';
-    font-size: 2rem;
     display: inline-block;
+    font-size: 48px;
     line-height: 1;
     font-variation-settings:
         'wght' var(--icon-weight),
         'FILL' var(--icon-fill),
-        'GRAD' var(--icon-grad);
+        'GRAD' var(--icon-grad),
+        'opsz' var(--icon-opsz);
 }
 
+.w-700{--icon-weight: 700;}
+.w-600{--icon-weight: 600;}
+.w-500{--icon-weight: 500;}
+.w-300{--icon-weight: 300;}
 .w-200{--icon-weight: 200;}
-.w-180{--icon-weight: 180;}
 .w-100{--icon-weight: 100;}
-.w-50{--icon-weight: 50;}
-.w-40{--icon-weight: 40;}
-.w-0{--icon-weight: 0;}
 
 
 .fill{--icon-fill: 1;}
