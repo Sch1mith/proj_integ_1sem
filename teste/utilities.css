@@ -15,20 +15,14 @@
     --cor-cinza-escuro: hsl(0 5% 30%);
     --cor-branco: hsl(0 0% 95%);
     --cor-preto: hsl(0 0% 5%);
-    --f-logo: "Quicksand", sans-serif;
-    --f-titulo: 'Outfit', sans-serif;
-    --f-padrao: 'Inter', sans-serif;
+    --f-logo: "Inter", sans-serif;
+    --f-titulo: 'Nunito', sans-serif;
+    --f-padrao: 'Finlandica Text', sans-serif;
     --f-icons: 'Material Symbols', sans-serif;
     --icon-weight: 400;
     --icon-fill: 0; /*mudar par 1 faz o icone ficar preenchido*/
     --icon-grad: 0;
     --icon-opsz: 24;
-/* são configurações do bootstrap*/
-    --bs-body-font-family: var(--f-padrao);
-    --bs-primary: var(--cor-laranja-contraste);
-    --bs-primary-rgb: 255, 126, 61;
-    --bs-secondary: var(--cor-azul);
-    --bs-secundary-rgb: 110, 194, 232;
 }
 
 /*utilitários*/
@@ -51,47 +45,29 @@
 .w-200{--icon-weight: 200;}
 .w-100{--icon-weight: 100;}
 
+.f-20{font-size: 20px; --icon-opsz: 20;}
+.f-24{font-size: 24px; --icon-opsz: 24;}
+.f-28{font-size: 28px; --ixon-opsz: 28;}
+.f-32{font-size: 32px; --icon-opsz: 32;}
 
 .fill{--icon-fill: 1;}
 
-
-.c-button{
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--f-titulo);
-    font-size: 1.1rem;
-    font-weight: 600;
-    border: var(--cor-preto) 1px solid;
-    box-shadow: 2px 1px 2px var(--cor-cinza-escuro);
 }
 
-.c-button--primary{
-    background-color: var(--cor-laranja-contraste);
-}
-
-.c-button--primary-var{
-    background-color: var(--cor-azul-contraste);
-}
-
-.c-button--secundary{
+html {
+    font-size: 62.5%;
     background-color: var(--cor-branco);
+
 }
 
-.c-input{
-    border: var(--cor-cinza-escuro) 1px solid;
-    &:focus{
-        border-color: var(--cor-preto);
-        outline: 0;
-        box-shadow: 1px 1px 3px 0.12rem var(--cor-cinza-claro);
+body {
+    font-family: var(--f-padrao);
+    font-weight: 400;
+    font-size: 1.6rem;
+    margin: 1lvh 0.5lvw;
+    @media(width <= 480) {
+        padding: 1rem;
     }
-}
-
-.c-input--simple {
-
-}
-
-.c-input--textarea {
-    resize: none;
-}
-
-.c-input-pesquisa {
-
 }
