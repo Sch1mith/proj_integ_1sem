@@ -1,0 +1,11 @@
+/*esse root é onde vão ficar a variaves do nosso site, pra ficar mais facil de padronizar tudo*/
+:root{
+    --b-cor-azul: hsl(199 71% 67%);
+    --b-cor-laranja: hsl(18 100% 62%);
+    --t-cor-laranja: hsl(18 100% 45%);
+    --f-logo: "Quicksand", sans-serif;
+    --f-titulo: 'Outfit', sans-serif;
+    --f-padrao: 'Inter', sans-serif;
+    /*aqui são configurações do bootstrap*/
+    --bs-body-font-family: var(--f-padrao);
+}
