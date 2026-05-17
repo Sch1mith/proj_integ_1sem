@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
+
 @font-face{
     font-family: 'Material Symbols';
     font-style: normal;
     font-weight: 100 700;
-    src: url('./icons/Material_Symbols_Rounded/MaterialSymbolsRounded-VariableFont_FILL,GRAD,opsz,wght.ttf');
+    src: url('./Material_Symbols_Rounded/MaterialSymbolsRounded-VariableFont_FILL,GRAD,opsz,wght.ttf');
 }
 
 /*esse root é onde vão ficar a variaves do nosso site, pra ficar mais facil de padronizar tudo*/
@@ -15,7 +17,8 @@
     --cor-cinza-escuro: hsl(0 5% 30%);
     --cor-branco: hsl(0 0% 95%);
     --cor-preto: hsl(0 0% 5%);
-    --f-logo: "Inter", sans-serif;
+    --cor-sombra: hsl(0 0% 80%);
+    --f-logo:  'Momo Trust Display', sans-serif !important;
     --f-titulo: 'Nunito', sans-serif;
     --f-padrao: 'Finlandica Text', sans-serif;
     --f-icons: 'Material Symbols', sans-serif;
@@ -26,10 +29,9 @@
 }
 
 /*utilitários*/
-.material-symbols{
+.symbols{
     font-family: 'Material Symbols';
     display: inline-block;
-    font-size: 48px;
     line-height: 1;
     font-variation-settings:
         'wght' var(--icon-weight),
@@ -45,28 +47,168 @@
 .w-200{--icon-weight: 200;}
 .w-100{--icon-weight: 100;}
 
-.f-20{font-size: 20px; --icon-opsz: 20;}
-.f-24{font-size: 24px; --icon-opsz: 24;}
-.f-28{font-size: 28px; --ixon-opsz: 28;}
-.f-32{font-size: 32px; --icon-opsz: 32;}
+.f-20{font-size: 2rem; --icon-opsz: 20;}
+.f-24{font-size: 2.4rem; --icon-opsz: 24;}
+.f-26{font-size: 2.6rem; --icon-opsz: 26;}
+.f-28{font-size: 2.8rem; --ixon-opsz: 28;}
+.f-32{font-size: 3.2rem; --icon-opsz: 32;}
 
 .fill{--icon-fill: 1;}
+
+.flex {display: flex;}
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--f-titulo);
 }
 
+.c-logo {
+    font-family: var(--f-logo);
+    font-weight: 400;
+    font-style: normal;
+    color: var(--cor-laranja-contraste);
+    font-size: 3.7rem;
+}
+
+
 html {
     font-size: 62.5%;
     background-color: var(--cor-branco);
-
 }
 
 body {
     font-family: var(--f-padrao);
     font-weight: 400;
     font-size: 1.6rem;
-    margin: 1lvh 0.5lvw;
+    margin: 1lvh 1lvw;
+    .c-header{
+        position: relative;
+
+        .nav{
+            justify-content: space-between;
+            align-content: center;
+            align-items: center;
+            margin: 1rem 1rem;
+        }
+
+        .pages{
+            position: relative;
+            margin: -5px 2px;
+            -webkit-user-select: none;
+            user-select: none;
+
+            summary {
+                display: flex;
+                align-items: center;
+                list-style: none;
+                gap: 0.5rem;
+                cursor: pointer;
+                &::-webkit-details-marker { display: none; }
+            }
+
+            p {
+                font-family: var(--f-titulo);
+                font-weight: 700;
+                font-size: 1.6rem;
+            }
+
+            .pages-link {
+                position: absolute;
+                top: 122%;
+                left: 0%;
+                z-index: 1;
+                align-items: center;
+                width: max-content;
+                background: var(--cor-branco);
+                gap: 2rem;
+                padding: 1.5rem 2rem;
+                border-radius: 0.8rem;
+                border-bottom: 1px solid var(--cor-preto);
+                box-shadow: 1px 1px 10px #0006;
+                a {
+                    font-weight: 600;
+                    color: var(--cor-preto);
+                    white-space: nowrap;
+                    transition: color 0.2s ease;
+                    text-decoration: none;
+                    font-size: 1.4rem;
+                    &:visited {
+                        color: var(--cor-preto);
+                    }
+                    &:hover {
+                        color: var(--cor-azul);
+                    }
+                }
+            }
+
+            .pages-link-usr {
+                display: none;
+                gap: 2rem;
+                &::before {
+                    content: "";
+                    width: 1px;
+                    background: var(--cor-preto);
+                }
+            }
+        }
+
+        .c-link-logo {
+            text-decoration: none;
+            color: var(--cor-laranja-contraste);
+            text-shadow: -0.5px -0.5px 1px var(--cor-cinza-claro),
+                             0.5px -0.5px 1px var(--cor-cinza-claro),
+                             -0.5px 0.5px 1px var(--cor-cinza-claro),
+                             0.5px 0.5px 1px var(--cor-cinza-claro);
+            -webkit-user-select: none;
+            user-select: none;
+            cursor: pointer;
+            &:visited {
+                text-decoration: none;
+                color: var(--cor-laranja-contraste);
+            }
+            &:hover {
+                color: var(--cor-laranja-contraste);
+                /*text-shadow: 0px 0px 3px var(--cor-cinza-escuro),
+                            -0.5px -0.5px 1px var(--cor-cinza-claro),
+                             0.5px -0.5px 1px var(--cor-cinza-claro),
+                             -0.5px 0.5px 1px var(--cor-cinza-claro),
+                             0.5px 0.5px 1px var(--cor-cinza-claro);*/
+            }
+        }
+
+        .c-button-login {
+            font-family: var(--f-titulo);
+            font-weight: 700;
+            align-items: center;
+            font-size: 1.6rem;
+            border: none;
+            box-shadow: 0px 0px 1px #000000;
+            background: var(--cor-branco);
+            border-radius: 1.4rem;
+            cursor: pointer;
+            padding-right: 1rem;
+            &:hover {
+                background: #0001;
+                outline: 1px solid #0008;
+                box-shadow: inset 0px 0px 3px #000000;
+            }
+            span {
+                padding: 1px 1px;
+                margin-bottom: 2px;
+            } 
+        }
+
+         &::after{
+            content: "";
+            position: absolute;
+            bottom: -1.5rem;
+            left: -1lvw;
+            right: -1lvw;
+            height: 1px;
+            background-color: var(--cor-preto);
+            box-shadow: 0px 2px 2px var(--cor-cinza-claro);
+        }
+    }
+
     @media(width <= 480) {
         padding: 1rem;
     }

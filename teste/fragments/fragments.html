@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Finlandica+Text:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./utilities.css">
+    </head>
+    <!--remover tudo que não seja <header> e <footer>-->
+    <body>
+        <header th:fragment="header" class="c-header">
+            <div class="flex nav">
+
+                <details class="pages">
+                    <summary>
+                        <span class="symbols f-26">menu</span>
+                        <p>Menu</p>
+                    </summary>
+                    <div class="flex pages-link">
+                        <a href="">Faça um anúncio</a>
+                        <a href="">Como funciona?</a>
+                        <a href="">Segurança</a>
+                        <div class="flex pages-link-usr">
+                            <a href="">Solicitações</a>
+                            <a href="">Meus Anúncios</a>
+                            <a href="">Histórico</a>
+                        </div>
+                    </div>
+                </details>
+
+                <a class="c-logo c-link-logo" href="./index.html">Ajudaí</a>
+
+                <button class="flex c-button-login" type="button">
+                    <span class="symbols f-32 w-400">person</span>
+                    Entrar
+                </button>
+            </div>
+        </header>
+
+        <footer th:fragment="footer" class="c-footer">
+
+        </footer>
+        <!--inclua o script em todas as páginas-->
+        <script src="./utilities.js"></script>
+    </body>
+</html>

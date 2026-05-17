@@ -1,0 +1,45 @@
+parte do model, onde o dominio vai ficar separado do resto, aqui só vão ficar os models, classes e regras de negocio
+
+src/main/java/
+└── com/
+    └── fatec/
+        └── ajudai/
+            │   /* Classes principais do seu Hexágono */
+            ├── core/
+            │   ├── domain/       <-- Ex: Usuario.java, Item.java
+            │   ├── ports/
+            │   │   ├── inbound/  <-- Interfaces UseCase (Casos de uso)
+            │   │   └── outbound/ <-- Interfaces RepositoryPort
+            │   └── services/     <-- Implementações da regra de negócio
+            │
+            │   /* Onde a tecnologia (Spring, Web, Banco) opera */
+            ├── infrastructure/
+            │   └── adapters/
+            │       ├── inbound/
+            │       │   └── web/  <-- SEUS CONTROLLERS DO THYMELEAF FICAM AQUI
+            │       │       └── HomeController.java (exemplo)
+            │       └── outbound/
+            │           └── database/ <-- Repositories do Spring Data JPA
+            │
+            └── AjudaiApplication.java <-- (Este arquivo já está aí, não mexa nele)
+
+
+parte do view e controller, separado do dominio, 
+
+src/main/resources/
+├── static/
+│   ├── vendor/               <-- (Já está aí, bibliotecas de terceiros)
+│   ├── js/                   <-- (Já está aí, scripts js)
+│   └── css/                  <-- (Já está aí)
+│       └── style-guide.css   <-- Seu CSS puro com as variáveis deve morar aqui
+│
+├── templates/
+│   ├── fragments/            <-- (Já está aí)
+│   │   ├── header.html       <-- Crie aqui dentro o arquivo do cabeçalho
+│   │   └── footer.html       <-- Crie aqui dentro o arquivo do rodapé
+│   │
+│   ├── index.html            <-- Crie aqui a sua página principal
+│   └── style-guide.html      <-- (Se este arquivo for a página HTML do guia de estilos, deixe ele aqui na raiz de templates)
+│
+└── application.properties    <-- (Já está aí, adicione spring.thymeleaf.cache=false aqui dentro)
+
