@@ -9,39 +9,57 @@
     </head>
     <!--remover tudo que não seja <header> e <footer>-->
     <body>
-        <header th:fragment="header" class="c-header">
-            <div class="flex nav">
-
-                <details class="pages">
-                    <summary>
-                        <span class="symbols f-26">menu</span>
-                        <p>Menu</p>
-                    </summary>
-                    <div class="flex pages-link">
-                        <a href="">Faça um anúncio</a>
-                        <a href="">Como funciona?</a>
-                        <a href="">Segurança</a>
-                        <div class="flex pages-link-usr">
-                            <a href="">Solicitações</a>
-                            <a href="">Meus Anúncios</a>
-                            <a href="">Histórico</a>
-                        </div>
+        <header th:fragment="header" class="flex c-header">
+            <details class="pages">
+                <summary>
+                    <span class="symbols f-26">menu</span>
+                    <p>Menu</p>
+                </summary>
+                <div class="flex pages-link">
+                    <a href="">Faça um anúncio</a>
+                    <a href="">Como funciona?</a>
+                    <a href="">Segurança</a>
+                    <a href="">Sobre nós</a>
+                    <div class="flex pages-link-usr">
+                        <a href="">Solicitações</a>
+                        <a href="">Meus Anúncios</a>
+                        <a href="">Histórico</a>
                     </div>
-                </details>
+                </div>
+            </details>
 
-                <a class="c-logo c-link-logo" href="./index.html">Ajudaí</a>
+            <a class="f-37 c-logo c-link-logo" href="./index.html">Ajudaí</a>
 
-                <button class="flex c-button v-login" type="button">
-                    <span class="symbols f-32 w-400">person</span>
-                    Entrar
-                </button>
-            </div>
+            <button class="flex c-button v-login" type="button">
+                <span class="symbols f-28">person</span>
+                Entrar
+            </button>
         </header>
 
-        <footer th:fragment="footer" class="c-footer">
-
+        <footer th:fragment="footer" class="flex c-footer">
+            <a class="play-store-link" href="">
+                <img class="play-store-icon" src="./src/google-play.png" alt="google play store logo"/>
+            </a>
+            <span class="line"></span>
+            <div class="flex-column links">
+                <p class="c-logo f-24">Ajudaí</p>
+                <a href="">Faça um anúncio</a>
+                <a href="">Como Funciona</a>
+                <a href="">Segurança</a>
+                <a href="">Sobre nós</a>
+            </div>
+            <span class="line"></span>
+            <div class="flex-column sociais">
+                <p>Nossas redes sociais</p>
+                <div class="flex sociais-icons">
+                    <span class="fa-brands fa-instagram"></span>
+                    <span class="fa-brands fa-tiktok"></span>
+                    <span class="fa-brands fa-x-twitter"></span>
+                </div>
+            </div>
         </footer>
         <!--inclua o script em todas as páginas-->
         <script src="./utilities.js"></script>
+        <script src="https://kit.fontawesome.com/2e9951a3e8.js" crossorigin="anonymous"></script>
     </body>
 </html>

@@ -10,14 +10,15 @@
 /*esse root é onde vão ficar a variaves do nosso site, pra ficar mais facil de padronizar tudo*/
 :root{
     --cor-azul: hsl(199 71% 67%);
-    --cor-azul-contraste: hsl(199 71% 47%);
+    --cor-azul-contraste: hsl(199 71% 50%);
+    --cor-roxo: hsl(260 70% 50%);
     --cor-laranja: hsl(18 100% 58%);
     --cor-laranja-contraste: hsl(20 100% 53%);
     --cor-cinza-claro: hsl(0 2% 55%);
+    --cor-cinza-claro-2: hsl(0 2% 65%);
     --cor-cinza-escuro: hsl(0 5% 30%);
     --cor-branco: hsl(0 0% 95%);
     --cor-preto: hsl(0 0% 5%);
-    --cor-sombra: hsl(0 0% 80%);
     --f-logo:  'Momo Trust Display', sans-serif !important;
     --f-titulo: 'Nunito', sans-serif;
     --f-padrao: 'Finlandica Text', sans-serif;
@@ -47,18 +48,32 @@
 .w-200{--icon-weight: 200;}
 .w-100{--icon-weight: 100;}
 
-.f-20{font-size: 2rem; --icon-opsz: 20;}
-.f-24{font-size: 2.4rem; --icon-opsz: 24;}
-.f-26{font-size: 2.6rem; --icon-opsz: 26;}
-.f-28{font-size: 2.8rem; --ixon-opsz: 28;}
-.f-32{font-size: 3.2rem; --icon-opsz: 32;}
+.f-20{font-size: 2rem;}
+.f-24{font-size: 2.4rem;}
+.f-26{font-size: 2.6rem;}
+.f-28{font-size: 2.8rem;}
+.f-32{font-size: 3.2rem;}
+.f-37{font-size: 3.7rem;}
 
 .fill{--icon-fill: 1;}
 
 .flex {display: flex;}
 
+.flex-column{display: flex; flex-direction: column;}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--f-titulo);
+}
+
+.line {
+    z-index: 1;
+    position: relative;
+    margin-left: -15rem;
+    margin-right: -15rem;
+    margin-top: 5rem;
+    width: 1px;
+    height: 12rem;
+    background: var(--cor-preto);
 }
 
 .c-logo {
@@ -66,7 +81,8 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     font-style: normal;
     color: var(--cor-laranja-contraste);
-    font-size: 3.7rem;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .c-button {
@@ -80,7 +96,6 @@ h1, h2, h3, h4, h5, h6 {
                 -2px -2px 4px #0003;
     border-radius: 1.4rem;
     cursor: pointer;
-    padding: 1rem 1.8rem;
     &:hover {
         outline: 1px solid #0008;
         box-shadow: inset 0px 0px 3px #000000;
@@ -111,7 +126,6 @@ h1, h2, h3, h4, h5, h6 {
         box-shadow: inset 0px 0px 3px #000000;
     }
     span {
-        padding: 1px 1px;
         margin-bottom: 2px;
     }
 }
@@ -128,13 +142,10 @@ body {
     margin: 1lvh 1lvw;
     .c-header{
         position: relative;
-
-        .nav{
-            justify-content: space-between;
-            align-content: center;
-            align-items: center;
-            margin: 1rem 1rem;
-        }
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+        margin: 1rem 1rem;
 
         .pages{
             position: relative;
@@ -200,10 +211,10 @@ body {
         .c-link-logo {
             text-decoration: none;
             color: var(--cor-laranja-contraste);
-            text-shadow: -0.5px -0.5px 1px var(--cor-cinza-claro),
-                             0.5px -0.5px 1px var(--cor-cinza-claro),
-                             -0.5px 0.5px 1px var(--cor-cinza-claro),
-                             0.5px 0.5px 1px var(--cor-cinza-claro);
+            text-shadow: -0.5px -0.5px 1px var(--cor-cinza-claro-2),
+                             0.5px -0.5px 1px var(--cor-cinza-claro-2),
+                             -0.5px 0.5px 1px var(--cor-cinza-claro-2),
+                             0.5px 0.5px 1px var(--cor-cinza-claro-2);
             -webkit-user-select: none;
             user-select: none;
             cursor: pointer;
@@ -221,14 +232,18 @@ body {
             }
         }
 
+        button{
+            padding: 0.6rem 1rem;
+        }
 
 
         &::after{
             content: "";
             position: absolute;
             bottom: -1.5rem;
-            left: -1lvw;
-            right: -1lvw;
+            left: -1.7lvw;
+            right: -1.7lvw;
+            overflow: hidden;
             height: 1px;
             background-color: var(--cor-preto);
             box-shadow: 0px 2px 2px var(--cor-cinza-claro);
@@ -237,5 +252,58 @@ body {
 
     @media(width <= 480) {
         padding: 1rem;
+    }
+
+    .c-footer {
+        font-family: var(--f-padrao);
+        position: relative;
+        justify-content: space-around;
+        align-items: center;
+        margin: 2rem 1rem;
+        max-height: 19rem;
+
+        .play-store-link {
+
+            .play-store-icon {
+                widht: 6.5rem;
+                height: 6.5rem;
+                cursor: pointer;
+            }
+        }
+
+        .links{
+            gap: 0.4rem;
+            p {
+                margin-bottom: 0.5rem;
+            }
+            a{
+                color: var(--cor-roxo);
+                &:visited{ color: var(--cor-roxo); }
+            }
+        }
+
+        .sociais {
+
+            .sociais-icons {
+                font-size: 3rem;
+                justify-content: center;
+                gap: 3rem;
+                span {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 1.5rem;
+            left: -1.7lvw;
+            right: -1.7lvw;
+            overflow: hidden;
+            height: 1px;
+            background-color: var(--cor-preto);
+            box-shadow: 0px -2px 2px var(--cor-cinza-claro);
+        }
     }
 }
