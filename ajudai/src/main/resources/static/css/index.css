@@ -53,5 +53,14 @@
             width: 60lvw;
             box-shadow: 0px 0px 2px var(--cor-azul-contraste);
         }
+        .label-pop {
+            align-content: center;
+            align-items: center;
+            gap: 2px;
+            margin-right: 5px;
+            span {
+                margin-right: 5px;
+            }
+        }
     }
 }

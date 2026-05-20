@@ -43,12 +43,24 @@
                 <span class="line-horizontal line-pop"></span>
                 <p>Populares:</p>
                 <radio-picker arial-label="botões radiais" role="radiogruop" class="flex wrap">
-                    <label><input type="radio" id="pop-1" name="pop" checked>Musica</label>
-                    <label><input type="radio" id="pop-2" name="pop" checked>Ferramentas</label>
-                    <label><input type="radio" id="pop-3" name="pop" checked>Fotografia</label>
-                    <label><input type="radio" id="pop-4" name="pop" checked>Artesanato</label>
-                    <label><input type="radio" id="pop-5" name="pop" checked>Artes</label>
-                    <label><input type="radio" id="pop-6" name="pop" checked>Acadêmia</label>
+                    <label class="f-18 flex label-pop"><input type="radio" id="pop-1" name="pop" checked>
+                        <span class="symbols pop_icons">music_note_2</span><p> Musica</p>
+                    </label>
+                    <label class="f-18 flex label-pop"><input type="radio" id="pop-2" name="pop" checked>
+                        <span class="symbols pop_icons">handyman</span><p> Ferramentas</p>
+                    </label>
+                    <label class="f-18 flex label-pop"><input type="radio" id="pop-3" name="pop" checked>
+                        <span class="symbols pop_icons">photo_camera</span><p> Fotografia</p>
+                    </label>
+                    <label class="f-18 flex label-pop"><input type="radio" id="pop-4" name="pop" checked>
+                        <span class="symbols pop_icons">content_cut</span><p> Artesanato</p>
+                    </label>
+                    <label class="f-18 flex label-pop"><input type="radio" id="pop-5" name="pop" checked>
+                        <span class="symbols pop_icons">brush</span><p> Artes</p>
+                    </label>
+                    <label class="f-18 flex label-pop"><input type="radio" id="pop-6" name="pop" checked>
+                        <span class="symbols pop_icons">exercise</span><p> Acadêmia</p>
+                    </label>
                 </radio-picker>
                 <div th:each="item : ${ListaDeProdutos}">
                     <div th:replace="~{fragments/card :: anuncio(produto=${item})}"></div>
