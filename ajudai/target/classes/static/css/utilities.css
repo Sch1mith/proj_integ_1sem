@@ -10,6 +10,7 @@
 /*esse root é onde vão ficar a variaves do nosso site, pra ficar mais facil de padronizar tudo*/
 :root{
     --cor-azul: hsl(199 71% 67%);
+    --cor-azul-claro: hsl(199 30% 90%);
     --cor-azul-contraste: hsl(199 71% 50%);
     --cor-roxo: hsl(260 70% 50%);
     --cor-laranja: hsl(18 100% 58%);
@@ -17,7 +18,7 @@
     --cor-cinza-claro: hsl(0 2% 55%);
     --cor-cinza-claro-2: hsl(0 2% 65%);
     --cor-cinza-escuro: hsl(0 5% 30%);
-    --cor-branco: hsl(0 0% 95%);
+    --cor-branco: hsl(192 0% 100%);
     --cor-preto: hsl(0 0% 5%);
     --f-logo:  'Momo Trust Display', sans-serif !important;
     --f-titulo: 'Nunito', sans-serif;
@@ -48,6 +49,8 @@
 .w-200{--icon-weight: 200;}
 .w-100{--icon-weight: 100;}
 
+.f-16{font-size: 1.6rem;}
+.f-18{font-size: 1.8rem;}
 .f-20{font-size: 2rem;}
 .f-24{font-size: 2.4rem;}
 .f-26{font-size: 2.6rem;}
@@ -59,13 +62,15 @@
 
 .flex {display: flex;}
 
-.flex-column{display: flex; flex-direction: column;}
+.column{flex-direction: column;}
+
+.wrap{flex-wrap: wrap;}
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--f-titulo);
 }
 
-.line {
+.line-vertical {
     z-index: 1;
     position: relative;
     margin-left: -15rem;
@@ -73,6 +78,13 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 5rem;
     width: 1px;
     height: 12rem;
+    background: var(--cor-preto);
+}
+
+.line-horizontal {
+    z-index: 1;
+    position: relative;
+    height: 1px;
     background: var(--cor-preto);
 }
 
@@ -85,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
     user-select: none;
 }
 
-.c-button {
+.c-btn {
     font-family: var(--f-titulo);
     font-weight: 700;
     align-items: center;
@@ -102,29 +114,24 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.v-principal {
+.btn-principal {
     background: var(--cor-laranja);
     &:focus {
         background: var(--cor-laranja-contraste);
     }
 }
 
-.v-secundario {
+.btn-secundario {
     background: var(--cor-azul);
     &:focus {
         background: var(--cor-azul-contraste);
     }
 }
 
-.v-login {
+.btn-login {
     font-size: 1.6rem;
     box-shadow: 0px 0px 1px #000000;
     border-radius: 1.4rem;
-    {
-        background: #0001;
-        outline: 1px solid #0008;
-        box-shadow: inset 0px 0px 3px #000000;
-    }
     span {
         margin-bottom: 2px;
     }
@@ -145,7 +152,8 @@ body {
         justify-content: space-between;
         align-content: center;
         align-items: center;
-
+        padding-left: 0.5rem;
+        padding-right: 1rem;
         .pages{
             position: relative;
             margin: -5px 2px;
@@ -183,7 +191,6 @@ body {
                 a {
                     font-weight: 600;
                     color: var(--cor-preto);
-                    white-space: nowrap;
                     transition: color 0.2s ease;
                     text-decoration: none;
                     font-size: 1.4rem;
@@ -223,11 +230,6 @@ body {
             }
             &:hover {
                 color: var(--cor-laranja-contraste);
-                /*text-shadow: 0px 0px 3px var(--cor-cinza-escuro),
-                            -0.5px -0.5px 1px var(--cor-cinza-claro),
-                             0.5px -0.5px 1px var(--cor-cinza-claro),
-                             -0.5px 0.5px 1px var(--cor-cinza-claro),
-                             0.5px 0.5px 1px var(--cor-cinza-claro);*/
             }
         }
 
@@ -240,8 +242,8 @@ body {
             content: "";
             position: absolute;
             bottom: -1.5rem;
-            left: -1.7lvw;
-            right: -1.7lvw;
+            left: -1lvw;
+            right: -1lvw;
             overflow: hidden;
             height: 1px;
             background-color: var(--cor-preto);
@@ -251,10 +253,6 @@ body {
 
     @media(width <= 480) {
         padding: 1rem;
-    }
-
-    .conteudo {
-        margin-bottom: -2rem;
     }
 
     .c-footer {
@@ -300,8 +298,8 @@ body {
             content: "";
             position: absolute;
             top: 1.5rem;
-            left: -1.7lvw;
-            right: -1.7lvw;
+            left: -1lvw;
+            right: -1lvw;
             overflow: hidden;
             height: 1px;
             background-color: var(--cor-preto);
