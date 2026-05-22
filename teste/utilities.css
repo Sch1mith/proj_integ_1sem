@@ -79,6 +79,7 @@ h1, h2, h3, h4, h5, h6 {
 .c-logo {
     font-family: var(--f-logo);
     font-weight: 400;
+    font-size: larger;
     font-style: normal;
     color: var(--cor-laranja-contraste);
     -webkit-user-select: none;

@@ -1,0 +1,185 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+/* 1. Alinha a logo de um lado e o menu do outro */
+.navbar {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background-color: var(--cor-branco);
+    border-bottom: 1px solid var(--cor-preto);
+    position: relative;
+    width: 100%;
+    width: calc(100% + 2lvw); /* Aumenta a largura compensando as duas laterais */
+    margin-left: -1lvw;       /* Puxa para a extrema esquerda */
+    margin-top: -1lvh;       /* Puxa para o topo absoluto da tela */
+}
+
+.voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* 2. Alinha o texto "user X" colado no botão ☰ */
+.menu-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative; /* Isso aqui segura o menu suspenso no lugar certo */
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    cursor: pointer;
+    color: var(--cor-preto);
+}
+
+/* 3. SOME com as bolinhas azuis e esconde a lista */
+.dropdown-menu {
+    display: none; /* Começa escondido */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--cor-branco);
+    border: 1px solid var(--cor-preto);
+    list-style: none; /* Remove os pontos de lista comuns */
+    padding: 0;
+    margin: 0;
+    margin-top: 0.5rem;
+    width: 18rem;
+    z-index: 1000;
+}
+
+/* Linhas de dentro do menu */
+.dropdown-menu li {
+    border-bottom: 1px solid var(--cor-cinza-claro-2);
+}
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+.dropdown-menu li a {
+    display: block;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: var(--cor-preto);
+    font-family: var(--f-titulo);
+    font-size: 1.4rem;
+}
+
+/* 4. Classe que o JS ativa para mostrar o menu no clique */
+.dropdown-menu.show {
+    display: block !important;
+}
+
+/* Container principal do Card */
+.card-pedido {
+    background-color: var(--cor-branco);
+    border: 1px solid var(--cor-preto);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Mantém um espaço fixo entre a imagem e os textos */
+}
+
+/* Força a imagem a ficar no tamanho certo */
+.foto-item {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border: 1px solid var(--cor-preto);
+}
+
+/* Zera as margens de todos os parágrafos para não quebrarem o alinhamento */
+.card-pedido p {
+    margin: 0;
+    font-family: var(--f-padrao);
+    color: var(--cor-preto);
+}
+
+/* Torna o primeiro parágrafo (Nome do item) em negrito */
+.card-pedido p:nth-of-type(1) {
+    font-weight: 700;
+}
+
+/* O TRUQUE: Joga o preço lá para a extrema direita sozinho */
+.preco-tag {
+    margin-left: auto !important; /* Empurra o preço para o fim da linha */
+    font-family: var(--f-titulo);
+    font-weight: 700;
+    white-space: nowrap; /* Garante que o texto do preço não quebre em duas linhas */
+}
+
+h1{
+    font-family: var(--f-titulo);
+    font-weight: 700;
+    font-size: 4rem;
+    text-align: center;
+    margin: 0rem;
+    padding: 2rem;
+    background-color: var(--cor-azul);
+    border: 1px solid black;
+    border-left: none;
+    border-right: none;
+    border-top:none;
+    width: 100%;
+    width: calc(100% + 2lvw); 
+    margin-left: -1lvw;      
+    margin-top: -1lvh;  
+}
+.voltar{
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+footer {
+    /* O !important vai dar um soco na mesa e garantir que o cinza apareça */
+    background-color: var(--cor-cinza-claro-2) !important; 
+    
+    width: calc(100% + 2lvw); 
+    margin-left: -1lvw;      
+    margin-bottom: -1lvh;  
+    margin-top: 4rem;
+    padding-top: 3rem;          
+    padding-bottom: 3rem;
+} 
+.symbols {
+    font-size: 3rem;
+    color: black;
+}
+
+.redes-icones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;                /* Espaço bem distribuído entre os botões */
+    margin: 0;
+}
+
+.redes{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.redes:hover {
+    transform: scale(1.15);
+    filter: brightness(1.15); /* Dá um leve destaque acendendo o ícone */
+}
+
+.footer-titulo {
+    margin: 0;
+    font-family: var(--f-padrao, sans-serif);
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--cor-preto);
+    text-align: center;
+    letter-spacing: 0.05rem;  /* Deixa o texto sutilmente mais elegante */
+}

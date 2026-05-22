@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--google fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle" />
+        <link href="https://fonts.googleapis.com/css2?family=Finlandica+Text:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <!--css padrãao-->
+        <link rel="stylesheet" href="./utilities.css">
+        <link rel="stylesheet" href="emprest.css">
+        <title>Ajudaí</title>
+    </head>
+
+    <body>
+
+        <!--essa tag é onde tem a navbar-->
+        <header>
+            <nav class="navbar">
+                <div class="c-logo">Ajudaí</div>
+                
+                <div class="menu-container">
+                    <span class="symbols">account_circle</span>
+                    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+                    
+                    <ul class="dropdown-menu" id="myDropdown">
+                        <li><a href="#">Faça um anúncio</a></li>
+                        <li><a href="#">Como funciona?</a></li>
+                        <li><a href="#">Segurança</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main class=".conteudo">
+            <!--aqui vai ficar o código html dá página-->
+            <h1>Solicitação de Empréstimo</h1> <br>
+            <a href="#" class="voltar">
+                <span class="symbols">arrow_back</span>
+                Voltar
+            </a>
+
+            <h2>Pendentes</h2>
+            <div class="card-pedido">
+                <img src="fragments/src/cinza.png" alt="fotoitem" class="foto-item">
+                <p>Nome do item</p>
+                <p>Nome de quem pediu</p>
+                <p>data e hora</p>
+                <p class="preco-tag">R$ 5,00/hora</p>
+            </div>
+
+            <button class="c-button v-principal">Aceitar Pedido</button>
+
+            <h2>Concluídos</h2>
+            <div class="card-pedido">
+                <img src="fragments/src/cinza.png" alt="fotoitem" class="foto-item">
+                <p>Nome do item</p>
+                <p>Nome de quem pediu</p>
+                <p>data e hora</p>
+                <p class="preco-tag">R$ 5,00/hora</p>
+            </div>
+            <div class="card-pedido">
+                <img src="fragments/src/cinza.png" alt="fotoitem" class="foto-item">
+                <p>Nome do item</p>
+                <p>Nome de quem pediu</p>
+                <p>data e hora</p>
+                <p class="preco-tag">R$ 5,00/hora</p>
+            </div>
+            <div class="card-pedido">
+                <img src="fragments/src/cinza.png" alt="fotoitem" class="foto-item">
+                <p>Nome do item</p>
+                <p>Nome de quem pediu</p>
+                <p>data e hora</p>
+                <p class="preco-tag">R$ 5,00/hora</p>
+            </div>
+        </main>
+
+        <!--essa tag footer-->
+        <footer>
+                <p class="footer-titulo">Redes sociais</p> <br>
+                <div class="redes-icones">
+                    <img src="source/instagram.png" alt="Instagram" class="redes">
+                    <img src="source/twitter.png" alt="Twitter" class="redes">
+                    <img src="source/facebook.png" alt="Facebook" class="redes">
+                </div>
+        </footer>
+
+        <script src="https://kit.fontawesome.com/2e9951a3e8.js" crossorigin="anonymous"></script>
+        <script src="emprest.js"></script>
+        <script src="utilities.js"></script>
+    </body>
+</html>

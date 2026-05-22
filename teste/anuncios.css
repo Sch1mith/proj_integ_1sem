@@ -1,0 +1,237 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+p{
+    margin: 1rem;
+}
+/* Reaproveitando a base da navbar */
+.navbar {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background-color: white;
+    border-bottom: 1px solid black;
+    position: relative;
+    width: 100%;
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative; /* Isso aqui segura o menu suspenso no lugar certo */
+}
+
+
+.dropdown-menu {
+    display: none; /* Começa escondido */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--cor-branco);
+    border: 1px solid var(--cor-preto);
+    list-style: none; /* Remove os pontos de lista comuns */
+    padding: 0;
+    margin: 0;
+    margin-top: 0.5rem;
+    width: 18rem;
+    z-index: 1000;
+}
+
+/* Linhas de dentro do menu */
+.dropdown-menu li {
+    border-bottom: 1px solid var(--cor-cinza-claro-2);
+}
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+.dropdown-menu li a {
+    display: block;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: var(--cor-preto);
+    font-family: var(--f-titulo);
+    font-size: 1.4rem;
+}
+/* 4. Classe que o JS ativa para mostrar o menu no clique */
+.dropdown-menu.show {
+    display: block !important;
+}
+
+.symbols {
+    font-size: 3rem;
+    color: black;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    cursor: pointer;
+    color: var(--cor-preto);
+}
+
+.flex.c-button.v-principal {
+    padding: 1rem;
+}
+
+.entrar-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-family: var(--f-titulo);
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+/* ---- ABAS (TABS) ---- */
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    border-bottom: 2px solid var(--cor-cinza-claro-2);
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    font-family: var(--f-titulo);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--cor-cinza-claro);
+    padding: 1rem 4rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Quando a aba está selecionada */
+.tab-btn.ativo {
+    color: var(--cor-laranja-contraste);
+    border-bottom: 4px solid var(--cor-laranja-contraste);
+    margin-bottom: -2px; /* Faz a borda sobrepor a linha cinza do container */
+}
+
+.tab-btn:hover:not(.ativo) {
+    color: var(--cor-preto);
+}
+
+/* ---- FILTROS ---- */
+.barra-filtros {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+    font-family: var(--f-padrao);
+    font-size: 1.6rem;
+}
+
+.select-sort {
+    border: none;
+    background-color: transparent;
+    font-family: var(--f-padrao);
+    font-size: 1.6rem;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* ---- GRID DE PRODUTOS (DESKTOP) ---- */
+.grid-produtos {
+    display: grid;
+    /* Isso cria colunas automáticas. Na tela grande, ficam 2 ou 3 lado a lado */
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.card-produto {
+    background-color: var(--cor-cinza-claro-2); /* Fundo cinza do mockup */
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 2rem;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.imagem-container {
+    width: 12rem;
+    height: 12rem;
+    flex-shrink: 0;
+    background-color: var(--cor-preto); /* Fundo preto para imagens que não preenchem tudo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto-produto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-produto {
+    flex-grow: 1; /* Faz as informações ocuparem o espaço do meio */
+}
+
+.info-produto h3 {
+    margin: 0 0 1rem 0;
+    font-size: 2rem;
+}
+
+.preco-destaque {
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+}
+
+.localizacao {
+    margin: 0;
+    color: var(--cor-cinza-escuro);
+}
+
+.btn-ver {
+    font-size: 1.4rem;
+    padding: 0.8rem 2rem;
+    border-radius: 0; /* No seu mockup o botão é retangular */
+    border: 1px solid var(--cor-preto);
+    box-shadow: 2px 2px 0px var(--cor-preto); /* Estilo de sombra sólida do botão da imagem */
+    white-space: nowrap;
+}
+
+/* ---- RODAPÉ DESKTOP (CORRIGIDO) ---- */
+.footer-duplo {
+    background-color: var(--cor-cinza-claro-2);
+    display: flex;
+    justify-content: space-around; /* Joga um pra cada lado */
+    align-items: flex-start;
+    padding: 4rem 2rem;
+    margin-top: auto;
+}
+
+.footer-coluna {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.btn-loja {
+    height: 50px;
+    cursor: pointer;
+}
+
+/* O MILAGRE CONTRA ÍCONES GIGANTES: Forçando tamanho máximo */
+.redes {
+    width: 3.5rem;
+    height: 3.5rem;
+    max-width: 40px; 
+    max-height: 40px;
+    object-fit: contain;
+    cursor: pointer;
+}
