@@ -23,10 +23,10 @@
             border-radius: 10px;
             overflow: hidden;
             &:focus-within {
-                box-shadow: 1px 1px 0px var(--cor-azul),
-                            -1px -1px 0px var(--cor-azul),
-                            1px -1px 0px var(--cor-azul),
-                            -1px 1px 0px var(--cor-azul);
+                box-shadow: 0px 0px 1px 1px var(--cor-azul);
+                            /*-1px -1px 1px 1px var(--cor-azul),
+                            1px -1px 1px 1px var(--cor-azul),
+                            -1px 1px 1px 1px var(--cor-azul);*/
             }
             .pesquisa-icon {
                 align-items: center;
@@ -35,6 +35,9 @@
                 margin-bottom: -1px;
                 background: var(--cor-azul-claro);
                 padding: 0.3rem 0.8rem;
+                cursor: pointer;
+                -webkit-user-select: none;
+                user-select: none;
             }
             .pesquisa-input {
                 background: transparent;
@@ -47,19 +50,113 @@
             }
         }
     }
-    .pop-section{
+    .pop-section {
         align-items: center;
+
+        .cards {
+            border: solid 1px red;
+            margin-top: 1.4rem;
+
+            .card_group {
+                padding: 0.4rem;
+                display: var(--display-cards, none);
+                gap: 1.3rem;
+
+                .card {
+                    width: 16rem;
+                    min-height: 28.1rem;
+                    border: solid 1px var(--cor-preto);
+                    padding: 0.3rem;
+                    & > img {
+                        width: 100%;
+                        height: 55%;
+                    }
+
+                    & > h4 {
+                        margin-top: 0.5rem;
+                        margin-bottom: -2.5rem;
+                    }
+
+                    & > h6 {
+                        margin-bottom: 2rem;
+                    }
+
+                    .fav-detalhes {
+                        padding: 0;
+                        gap: 1.7rem;
+                        justify-content: space-around;
+                        margin-bottom: 0.5rem;
+                        margin-top: auto;
+                        .btn-detalhes {
+                            padding: 0.5rem 0.8rem;
+                        }
+
+                        .btn-favorite {
+                            background: none;
+                            border: none;
+                            padding: 0;
+                            cursor: pointer;
+                            outline: none;
+                        }
+
+                        & > span {
+
+                        }
+                    }
+                }
+            }
+        }
+
+        &:has(#pop-1:checked) .cards #card_group_1,
+        &:has(#pop-2:checked) .cards #card_group_2,
+        &:has(#pop-3:checked) .cards #card_group_3,
+        &:has(#pop-4:checked) .cards #card_group_4,
+        &:has(#pop-5:checked) .cards #card_group_5,
+        &:has(#pop-6:checked) .cards #card_group_6 { --display-cards: flex; }
+
         .line-pop {
             width: 60lvw;
             box-shadow: 0px 0px 2px var(--cor-azul-contraste);
         }
-        .label-pop {
-            align-content: center;
+        .pop-radio {
+            gap: 2rem;
+            height: 5rem;
             align-items: center;
-            gap: 2px;
-            margin-right: 5px;
-            span {
-                margin-right: 5px;
+
+
+
+            input {
+                opacity: 0;
+                position: absolute;
+                pointer-events: none;
+            }
+
+            .label-pop {
+                align-content: center;
+                align-items: center;
+                gap: 3px;
+                max-height: 1rem;
+                border-radius: 20px;
+                &:has(input:checked) {
+                    outline: 2px solid var(--cor-laranja);
+                    box-shadow: 0px 0px 3px 1px var(--cor-laranja);
+                    text-shadow: 0px 0px 2px var(--cor-cinza-claro);
+                }
+                &:has(:not(input:checked)) {
+                    box-shadow: 0px 0px 5px #000000;
+                }
+                -webkit-user-select: none;
+                user-select: none;
+                padding: 1.5rem;
+                cursor: pointer;
+                background: var(--cor-branco);
+                &:hover { background: #0004; }
+                &:active {background: #0008; }
+
+
+                span {
+                    margin-right: 5px;
+                }
             }
         }
     }

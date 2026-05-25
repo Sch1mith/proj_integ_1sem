@@ -10,11 +10,15 @@
 /*esse root é onde vão ficar a variaves do nosso site, pra ficar mais facil de padronizar tudo*/
 :root{
     --cor-azul: hsl(199 71% 67%);
-    --cor-azul-claro: hsl(199 30% 90%);
+    --cor-azul-claro: hsl(199 60% 80%);
     --cor-azul-contraste: hsl(199 71% 50%);
     --cor-roxo: hsl(260 70% 50%);
     --cor-laranja: hsl(18 100% 58%);
+    --cor-laranja-claro: hsl(20 75% 55%);
     --cor-laranja-contraste: hsl(20 100% 53%);
+    --cor-avermelhado: hsl(10 80% 50%);
+    --cor-avermelhado-contraste: hsl(10 95% 51%);
+    --cor-avermelhado-claro: hsl(10 90% 55%);
     --cor-cinza-claro: hsl(0 2% 55%);
     --cor-cinza-claro-2: hsl(0 2% 65%);
     --cor-cinza-escuro: hsl(0 5% 30%);
@@ -48,6 +52,15 @@
 .w-300{--icon-weight: 300;}
 .w-200{--icon-weight: 200;}
 .w-100{--icon-weight: 100;}
+
+.fw-100{font-weight: 100;}
+.fw-200{font-weight: 200;}
+.fw-300{font-weight: 300;}
+.fw-500{font-weight: 500;}
+.fw-600{font-weight: 600;}
+.fw-700{font-weight: 700;}
+.fw-800{font-weight: 800;}
+.fw-900{font-weight: 900;}
 
 .f-16{font-size: 1.6rem;}
 .f-18{font-size: 1.8rem;}
