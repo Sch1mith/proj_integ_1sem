@@ -1,7 +1,27 @@
+.hero-section {
+    background: var(--cor-amarelo);
+    height: 20lvh;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: -1lvw;
+        right: -1lvw;
+        top: 10lvh;
+        bottom: 50lvh;
+        overflow: hidden;
+        background: var(--cor-amarelo);
+        z-index: -1;
+        margin-top: auto;
+    }
+}
+
 .conteudo {
     margin-top: 2rem;
     margin-bottom: 0.6rem;
-    
+
+
+
     .section-1 {
         align-items: center;
         min-height: 200px;
