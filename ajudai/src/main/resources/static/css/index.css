@@ -1,16 +1,17 @@
 .hero-section {
-    background: var(--cor-amarelo);
-    height: 20lvh;
+    height: 250px;
+    background: var(--cor-preto)aw;
 
     &::after {
         content: "";
         position: absolute;
         left: -1lvw;
         right: -1lvw;
-        top: 10lvh;
-        bottom: 50lvh;
+        top: 0;
+        bottom: 0;
         overflow: hidden;
-        background: var(--cor-amarelo);
+        background-color: var(--cor-amarelo);
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%233a65ff' fill-opacity='0.61'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
         z-index: -1;
         margin-top: auto;
     }
@@ -19,7 +20,6 @@
 .conteudo {
     margin-top: 2rem;
     margin-bottom: 0.6rem;
-
 
 
     .section-1 {
