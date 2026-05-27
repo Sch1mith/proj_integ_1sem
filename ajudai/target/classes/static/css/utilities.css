@@ -7,6 +7,27 @@
     src: url('../vendor/fonts/icons/Material_Symbols_Rounded/MaterialSymbolsRounded-VariableFont_FILL,GRAD,opsz,wght.ttf');
 }
 
+@property --brilho {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: hsl(199 90% 90%);
+}
+
+@keyframes pulsar {
+    0%,100% {
+        --brilho: hsl(199 90% 90% / 0.1);
+    }
+
+    50% {
+        --brilho: hsl(199 90% 90% / 1);
+    }
+}
+
+@keyframes flutuar {
+    0%, 100% {transform: translateY(0px);}
+    50% {transform: translateY(-10px);}
+}
+
 /*esse root é onde vão ficar a variaves do nosso site, pra ficar mais facil de padronizar tudo*/
 :root{
     --cor-azul: hsl(199 71% 67%);
@@ -16,18 +37,22 @@
     --cor-laranja: hsl(18 100% 58%);
     --cor-laranja-claro: hsl(20 75% 55%);
     --cor-laranja-contraste: hsl(20 100% 53%);
+    --cor-salmao: hsl(18 100% 86.9%);
+    /*#ffd0bc*/
     --cor-avermelhado: hsl(10 80% 50%);
     --cor-avermelhado-contraste: hsl(10 95% 51%);
     --cor-avermelhado-claro: hsl(10 90% 55%);
-    --cor-amarelo: hsl(50 100% 50%);
+    --cor-amarelo: hsl(46 95% 65%);
+    --cor-amarelo-escuro: hsl(46 100% 50%);
     --cor-cinza-claro: hsl(0 2% 55%);
     --cor-cinza-claro-2: hsl(0 2% 65%);
     --cor-cinza-escuro: hsl(0 5% 30%);
+    --cor-branco-2: hsl(192 0% 90%);
     --cor-branco: hsl(192 0% 100%);
     --cor-preto: hsl(0 0% 5%);
     --f-logo:  'Momo Trust Display', sans-serif !important;
-    --f-titulo: 'Nunito', sans-serif;
-    --f-padrao: 'Finlandica Text', sans-serif;
+    --f-titulo: 'Google Sans', sans-serif;
+    --f-padrao: 'Nunito', sans-serif;
     --f-icons: 'Material Symbols', sans-serif;
     --icon-weight: 400;
     --icon-fill: 0; /*mudar par 1 faz o icone ficar preenchido*/
@@ -57,6 +82,7 @@
 .fw-100{font-weight: 100;}
 .fw-200{font-weight: 200;}
 .fw-300{font-weight: 300;}
+.fw-400{font-weight: 400;}
 .fw-500{font-weight: 500;}
 .fw-600{font-weight: 600;}
 .fw-700{font-weight: 700;}
@@ -71,6 +97,7 @@
 .f-28{font-size: 2.8rem;}
 .f-32{font-size: 3.2rem;}
 .f-37{font-size: 3.7rem;}
+.f-40{font-size: 4rem;}
 
 .fill{--icon-fill: 1;}
 

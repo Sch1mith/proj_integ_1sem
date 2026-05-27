@@ -3,10 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Finlandica+Text:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Momo+Trust+Display&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 
         <!--caminho para spring-->
         <link rel="stylesheet" href="/css/utilities.css">
@@ -21,14 +20,15 @@
 
         <header th:replace="~{fragments :: header}"></header>
 
-
-
         <main class="conteudo">
             <div class="flex column section-1">
                 <div class="flex column hero-section">
-
+                    <h2 class="fw-400 f-40 titulo">Precisa de algo?<br> O <span class="c-logo">Ajudaí</span> é o lugar!</h2>
+                    <p class="fw-700 texto">Encontre qualquer ferramenta ou equipamento perto de você para os seus projetos.
+                        Faça pedidos por proximidade e colabore com a sua região de forma simples e econômica.</p>
+                    <a href="" class="flex saiba-mais f-18 fw-700"><span class="symbols w-500 f-24">arrow_outward</span> Saiba Mais</a>
                 </div>
-                <h2>Encontre o equipamento que precisa!</h2>
+                <h2>Pesquise no site</h2>
                 <p class="f-18">faça um pedido na sua região ou veja anuncios de equipamento</p>
                 <form action="/pesquisa" method="GET" class="search-form">
                     <div class="flex pesquisa-grp">
@@ -135,20 +135,6 @@
                                 </button>
                             </div>
                         </div>
-                        <div id="" class="flex column card">
-                            <img src="/img/placeholder.png" alt="imagem placeholder"/>
-                            <h4 class="fw-700 f-18">Titulo, musica 6</h4>
-                            <h6 class="fw-600 f-16">R$00,00 / hora</h6>
-                            <div class="flex fav-detalhes">
-                                <button class="btn-favorite">
-                                    <span class="symbols f-24 w-500">star</span>
-                                </button>
-                                <button id="" class="flex c-btn btn-principal btn-detalhes" type="button">
-                                    Detalhes
-                                </button>
-                            </div>
-                        </div>
-                        <!--fim do card-->
                     </div>
                     <div id="card_group_2" class="card_group">
                         <div id="" class="flex column card">
@@ -177,7 +163,7 @@
                                 </button>
                             </div>
                         </div>
-                         <div id="" class="flex column card">
+                        <div id="" class="flex column card">
                             <img src="/img/placeholder.png" alt="imagem placeholder"/>
                             <h4 class="fw-700 f-18">Titulo, ferramenta</h4>
                             <h6 class="fw-600 f-16">R$00,00 / hora</h6>
@@ -189,7 +175,7 @@
                                     Detalhes
                                 </button>
                             </div>
-                         </div>
+                        </div>
                         <div id="" class="flex column card">
                             <img src="/img/placeholder.png" alt="imagem placeholder"/>
                             <h4 class="fw-700 f-18">Titulo, ferramenta</h4>
@@ -278,10 +264,23 @@
                         </div>
                     </div>
                 </div>
-                <div th:each="item : ${ListaDeProdutos}">
-                    <div th:replace="~{fragments/card :: anuncio(produto=${item})}"></div>
-                </div>
+                <!-- <div th:each="item : ${ListaDeProdutos}">
+                     <div th:replace="~{fragments/card :: anuncio(produto=${item})}"></div>
+                     </div> -->
             </div>
+            <section class="flex app-section">
+                <div class="app-content">
+                    <h2 class="f-28 app-title">O <span>Ajudaí</span> na palma da sua mão.</h2>
+                    <p class="f-18 fw-500 app-subtitle">
+                        Em breve, você poderá alugar ferramentas, acompanhar seus pedidos por proximidade e falar com a vizinhança direto pelo nosso aplicativo oficial.
+                    </p>
+                    <span class="f-16 fw-800 app-badge">Breve na Google Play Store</span>
+                </div>
+
+                <div class="app-mockup">
+                    <img src="img/celular.jpg" alt="Mockup do aplicativo Ajudaí no celular" class="phone-image">
+                </div>
+            </section>
         </main>
 
         <footer th:replace="~{fragments :: footer}"></footer>
