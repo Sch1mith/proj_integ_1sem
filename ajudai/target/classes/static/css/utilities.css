@@ -302,6 +302,7 @@ body {
         justify-content: space-around;
         align-items: center;
         max-height: 19rem;
+        margin-bottom: 2rem;
 
         .play-store-link {
 

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="[http://www.thymeleaf.org](http://www.thymeleaf.org)" lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--google fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Finlandica+Text:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <!--css padrãao-->
+        <link rel="stylesheet" href="./utilities.css">
+        <title>Ajudaí</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajudaí - Cadastro</title>
+    <style>
+/* body temporario pra ficar tudo bonitinho encaixadinho */
+body {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        /* eu provavelmente vou remover isso na hora de padronizar o site inteiro /*
+/* formulário e Inputs */
+form {  padding: 15px; display: flex; flex-direction: column; gap: 12px; }
+.row { display: flex; gap: 12px; }
+label { display: flex; flex-direction: column; flex: 1; font-size: 13px; gap: 4px; }
+input, select { box-sizing: border-box; margin: 0; padding: 0; padding: 10px 14px; background: #e0e0e0; border: 1px solid #bfbfbf; border-radius: 20px; font-size: 13px; outline: none; width: 100%; }
+
+/* tracinho legal no lado do input */
+input:required { border-left: 3px solid #E65100; } 
+
+/* caixa de Termos e Botão */
+.terms { box-sizing: border-box; margin: 0; padding: 0;  padding: 10px; border-radius: 4px; font-size: 11px; line-height: 1.4; }
+.terms a {color: #0d47a1; }
+button { background: #8CD6FA; border: 1px solid #757575; padding: 12px; font-size: 18px; font-weight: bold; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+        <main class=".conteudo">
+                    <!--essa tag é onde a header vai ser injetada pelo springboot-->
+        <header th:replace="~{fragments :: header}">imagina que tem um header aqui </header>
+            <!--O header e o footer deviam ficar fora do main class né, eu devia arrumar isso em outra hora, mas não pareceu mudar muita coisa, principalmente pq eu não consegui configurar o header-->
+        <h2>Cadastro</h2>
+
+        <form action="#">
+            <div class="row">
+                <label>Nome* <input type="text" placeholder="Nome" required></label>
+                <label>Sobrenome* <input type="text" placeholder="Sobrenome" required></label>
+            </div>
+            
+            <div class="row">
+            <label>Celular* <input type="text" placeholder="(XX) XX XXXX-XXXX" required></label>
+            <label>Email* <input type="text" placeholder="AbcAbc@gmail.com" required></label>
+            </div>
+                                    <div class="terms">
+                <a>É obrigatório ter pelo menos celular OU email para se conectar no site.</a>.
+            </div>
+            <label>Senha* <input type="password" placeholder="Mínimo 6 dígitos" required></label>
+            <label>Insira sua senha novamente* <input type="password" placeholder="Mínimo 6 dígitos" required></label>
+
+            <div class="row">
+                <label>Estado* 
+                    <select>
+                        <option>São Paulo</option>
+                    </select>
+                </label>
+                <label>Cidade 
+                    <select>
+                        <option>São Paulo</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="row">
+                <label>Data de Nascimento* <input type="text" placeholder="DD/MM/YYYY"></label>
+                <label>Gênero 
+                    <select>
+                        <option>Masculino</option>
+                        <option>Feminino</option>
+                        <option>Outro</option>
+                    </select>
+                </label>
+            </div>
+
+            <label>CPF* <input type="text" required></label>
+
+            <div class="terms">
+                Ao continuar, você concorda com nosso <a href="#">Contrato de Usuário</a> e reconhece que compreende nossa <a href="#">Política de Privacidade</a>.
+            </div>
+
+                <button class="flex c-button v-secundario" type="button">
+                    Cadastrar-se
+                </button>
+        </form>
+                <!--essa tage é onde o footer vai ser injetado pelo springboot-->
+        <footer th:replace="~{fragments :: footer}"> imagina que tem um footer aqui</footer>
+                </main>
+        <script src="https://kit.fontawesome.com/2e9951a3e8.js" crossorigin="anonymous"></script>
+        <script src="utilities.js"></script>
+</body>
+</html>
