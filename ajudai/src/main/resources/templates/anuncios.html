@@ -7,10 +7,12 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Finlandica+Text:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-        <!--css padrãao-->
+        <!--css padrão-->
         <link rel="stylesheet" href="./css/utilities.css">
+        <link rel="stylesheet" href="./css/anuncios.css">
         <link rel="stylesheet" href="./css/anuncio_proximidade.css">
-        <title>Crie um Anúncio</title>
+        <link rel="stylesheet" href="./css/anuncio_lista.css">
+        <title>Anúncios</title>
     </head>
 
     <body>
@@ -19,7 +21,21 @@
         <header th:replace="~{fragments :: header}"></header>
 
         <main class="conteudo">
-            <div th:insert="~{fragments :: form-pedido}"></div>
+            <div class="flex column anuncios_tabs">
+                <h3>Encontre o que precisa</h3>
+                <p th:if="${termoPesquisado != null}"
+           th:text="'Resultados para a pesquisa: ' + ${termoPesquisado}"></p>
+
+                <radio-picker aria-label="Botões radiais" role="radiogroup" class="flex">
+                    <label><input type="radio" id="proximidade" name="abas" checked>Pedido na sua região</label>
+                    <label><input type="radio" id="fixos" name="abas">Veja anuncios</label>
+                </radio-picker>
+
+                <div class="anuncio_tabs">
+                    <div id="p_1" th:insert="~{fragments :: form-pedido}"></div>
+                    <div id="p_2" th:insert="~{fragments :: lista-anuncios}"></div>
+                </div>
+            </div>
         </main>
 
         <!--essa tage é onde o footer vai ser injetado pelo springboot-->
