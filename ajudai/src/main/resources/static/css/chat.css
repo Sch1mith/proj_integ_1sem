@@ -1,0 +1,246 @@
+.conteudo {
+    margin-top: 2rem;
+
+    .layout-chat {
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        height: 650px; /* Altura fixa para simular um sistema desktop real */
+        border-radius: 6px;
+        overflow: hidden;
+        background-color: #fff;
+    }
+
+    .chat-avatar {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid #000;
+    }
+
+    /* BARRA LATERAL (ESQUERDA) */
+    .chat-sidebar {
+        background-color: #e5e5e5;
+        border-right: 1px solid #000;
+        display: flex;
+        flex-direction: column;
+
+        .sidebar-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #ccc;
+
+            h3 {
+                margin: 0;
+                text-transform: lowercase;
+                font-size: 1.3rem;
+                font-weight: 700;
+            }
+        }
+
+        .lista-conversas {
+            flex: 1;
+            overflow-y: auto; /* Permite rolar os contatos se houver muitos */
+
+            .conversa-item {
+                display: flex;
+                gap: 0.8rem;
+                padding: 1.2rem 1.5rem;
+                cursor: pointer;
+                border-bottom: 1px solid #dcdcdc;
+                background-color: #e5e5e5;
+
+                &:hover {
+                    background-color: #dadada;
+                }
+
+                &.ativa {
+                    background-color: #fff; /* Destaca a conversa selecionada */
+                }
+
+                .conversa-info {
+                    flex: 1;
+                    overflow: hidden;
+
+                    .conversa-topo {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 0.2rem;
+
+                        h4 { margin: 0; font-size: 1rem; font-weight: 600; }
+                        .chat-hora { font-size: 0.8rem; color: #777; }
+                    }
+
+                    .conversa-preview {
+                        margin: 0;
+                        font-size: 0.85rem;
+                        color: #555;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis; /* Corta o texto longo com ... */
+                    }
+                }
+            }
+        }
+    }
+
+    /* JANELA PRINCIPAL (DIREITA) */
+    .chat-janela {
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        height: 100%;
+
+        /* Cabeçalho superior */
+        .chat-janela-header {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f9f9f9;
+
+            .usuario-conversando {
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+
+                h4 { margin: 0; font-size: 1.1rem; }
+                .status-texto {
+                    font-size: 0.8rem;
+                    display: block;
+
+                    &.online { color: #2ecc71; font-weight: 500; }
+                }
+            }
+
+            /* Tag do produto do anúncio */
+            .contexto-produto {
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                background-color: #e5e5e5;
+                padding: 0.4rem 0.8rem;
+                border: 1px solid #000;
+                border-radius: 4px;
+
+                .mini-img-chat {
+                    width: 24px;
+                    height: 24px;
+                    object-fit: contain;
+                    background: #fff;
+                    border-radius: 2px;
+                }
+
+                p {
+                    margin: 0;
+                    font-size: 0.85rem;
+                    font-weight: 600;
+                    text-transform: lowercase;
+                }
+            }
+        }
+
+        /* Área de Rolagem das Mensagens */
+        .chat-mensagens {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto; /* Rola as mensagens mantendo o topo e o rodapé fixos */
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            background-color: #f4f4f4; /* Fundo levemente contrastante para os balões */
+
+            .mensagem-bloco {
+                display: flex;
+                flex-direction: column;
+                max-width: 65%;
+
+                .balao-texto {
+                    padding: 0.9rem 1.2rem;
+                    border-radius: 6px;
+                    font-size: 0.98rem;
+                    line-height: 1.4;
+                    border: 1px solid #000;
+                }
+
+                .mensagem-hora {
+                    font-size: 0.75rem;
+                    color: #777;
+                    margin-top: 0.3rem;
+                    padding: 0 0.2rem;
+                }
+
+                /* Balão de quem recebe (Arthur) */
+                &.recebida {
+                    align-self: flex-start;
+
+                    .balao-texto {
+                        background-color: #fff;
+                        box-shadow: 2px 2px 0px #000;
+                    }
+                    .mensagem-hora { align-self: flex-start; }
+                }
+
+                /* Balão de quem envia (Logado) */
+                &.enviada {
+                    align-self: flex-end;
+
+                    .balao-texto {
+                        background-color: #ff7a00; /* Laranja identidade do app */
+                        box-shadow: 2px 2px 0px #000;
+                    }
+                    .mensagem-hora { align-self: flex-end; }
+                }
+            }
+        }
+
+        /* Rodapé de entrada de texto */
+        .chat-input-container {
+            padding: 1.2rem 1.5rem;
+            border-top: 1px solid #000;
+            background-color: #fff;
+
+            .chat-form-envio {
+                display: flex;
+                gap: 1rem;
+
+                input[type="text"] {
+                    flex: 1;
+                    padding: 1rem;
+                    font-size: 1rem;
+                    border: 1px solid #000;
+                    border-radius: 4px;
+                    outline: none;
+
+                    &:focus {
+                        border-color: #ff7a00;
+                    }
+                }
+
+                .btn-enviar-mensagem {
+                    background-color: #ff7a00;
+                    border: 1px solid #000;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 4px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    box-shadow: 2px 2px 0px #000;
+
+                    .symbols {
+                        font-size: 1.3rem;
+                        color: #000;
+                    }
+
+                    &:active {
+                        transform: translate(1px, 1px);
+                        box-shadow: 0px 0px 0px #000;
+                    }
+                }
+            }
+        }
+    }
+}

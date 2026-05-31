@@ -44,10 +44,97 @@
             display: grid;
             place-items: center;
 
-            > div {
+            & > div {
                 display: var(--display, none);
             }
 
+            .anuncios-container {
+                width: 100%;
+                padding: 1rem;
+
+                .anuncios-header {
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 1.5rem;
+                    font-size: 1.1rem;
+
+                    .select-clean {
+                        border: none;
+                        background: transparent;
+                        font-weight: bold;
+                        cursor: pointer;
+                        outline: none;
+                        font-size: 1.1rem;
+                    }
+                }
+
+                .anuncios-lista {
+                    gap: 1.5rem; /* Espaçamento idêntico entre os cards */
+                }
+
+                .anuncio-card {
+                    overflow: hidden;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1),
+                                0 0 1px var(--cor-cinza-claro);
+                    height: 160px;
+
+                    .card-imagem {
+                        width: 180px;
+                        height: 100%;
+                        background-color: #0000;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain; /* Garante que a foto da ferramenta não seja cortada */
+                            padding: 0.5rem;
+                        }
+                    }
+
+                    /* Lado direito do card */
+                    .card-conteudo {
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 1.5rem;
+
+                        .card-info {
+                            gap: 0.5rem;
+
+                            .card-titulo {
+                                font-size: 1.3rem;
+                                margin: 0;
+                                font-weight: 600;
+                                text-transform: lowercase;
+                            }
+
+                            .card-preco {
+                                font-size: 1.1rem;
+                                font-weight: bold;
+                                margin: 0;
+                            }
+
+                            .card-localizacao {
+                                font-size: 1rem;
+                                color: var(--cor-cinza-escuro);
+                                margin: 0;
+                            }
+                        }
+
+                        .card-acoes {
+                            a {
+                                text-decoration: none;
+                                .btn-ver-anuncio {
+                                    font-size: 1.3rem;
+                                    padding: 0.8rem 1.2rem;
+                                }
+                            }
+                        }
+                    }
+                }
+           }
         }
 
     }

@@ -14,18 +14,14 @@
 }
 
 @keyframes pulsar {
-    0%,100% {
-        --brilho: hsl(199 90% 90% / 0.1);
-    }
+    0%,100% { --brilho: hsl(199 90% 90% / 0.1); }
 
-    50% {
-        --brilho: hsl(199 90% 90% / 1);
-    }
+    50% { --brilho: hsl(199 90% 90% / 1); }
 }
 
 @keyframes flutuar {
     0%, 100% {transform: translateY(0px);}
-    50% {transform: translateY(-10px);}
+    50% {transform: translateY(-15px);}
 }
 
 /*esse root é onde vão ficar a variaves do nosso site, pra ficar mais facil de padronizar tudo*/
@@ -38,7 +34,6 @@
     --cor-laranja-claro: hsl(20 75% 55%);
     --cor-laranja-contraste: hsl(20 100% 53%);
     --cor-salmao: hsl(18 100% 86.9%);
-    /*#ffd0bc*/
     --cor-avermelhado: hsl(10 80% 50%);
     --cor-avermelhado-contraste: hsl(10 95% 51%);
     --cor-avermelhado-claro: hsl(10 90% 55%);
@@ -140,9 +135,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .c-btn {
     font-family: var(--f-titulo);
-    font-weight: 700;
+    font-weight: 600;
     align-items: center;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     background: var(--cor-branco);
     border: none;
     box-shadow: 2px 2px 4px #0008,
@@ -200,7 +195,7 @@ body {
             margin: -5px 2px;
             -webkit-user-select: none;
             user-select: none;
-
+            z-index: 2;
             summary {
                 display: flex;
                 align-items: center;
@@ -245,7 +240,6 @@ body {
             }
 
             .pages-link-usr {
-                display: none;
                 gap: 2rem;
                 &::before {
                     content: "";
@@ -258,10 +252,8 @@ body {
         .c-link-logo {
             text-decoration: none;
             color: var(--cor-laranja-contraste);
-            text-shadow: -0.5px -0.5px 1px var(--cor-cinza-claro-2),
-                             0.5px -0.5px 1px var(--cor-cinza-claro-2),
-                             -0.5px 0.5px 1px var(--cor-cinza-claro-2),
-                             0.5px 0.5px 1px var(--cor-cinza-claro-2);
+            text-shadow: 0.5px -0.5px 1px var(--cor-cinza-claro-2),
+                         0.5px 0.5px 1px var(--cor-cinza-claro-2);
             -webkit-user-select: none;
             user-select: none;
             cursor: pointer;
@@ -274,8 +266,11 @@ body {
             }
         }
 
-        button{
-            padding: 0.6rem 1rem;
+        .a-btn {
+            text-decoration: none;
+            button{
+                padding: 0.6rem 1rem;
+            }
         }
 
 

@@ -1,0 +1,193 @@
+.conteudo {
+    width: 100%;
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+
+    .titulo-pagina {
+        font-size: 1.8rem;
+        margin-bottom: 2.5rem;
+        text-transform: lowercase;
+        font-weight: 700;
+    }
+
+    .layout-criar-anuncio {
+        display: grid;
+        grid-template-columns: 1fr 380px; /* Campos na esquerda, fotos/dicas na direita */
+        gap: 4rem;
+        align-items: start;
+    }
+
+    /* Estrutura padrão dos grupos de campos */
+    .form-grupo {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        margin-bottom: 1.8rem;
+
+        label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: lowercase;
+            color: #000;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.05rem;
+            border: 1px solid #000;
+            border-radius: 4px;
+            background-color: #fff;
+            box-sizing: border-box;
+            outline: none;
+
+            &:focus {
+                border-color: #ff7a00;
+                box-shadow: 0 0 0 1px #ff7a00;
+            }
+        }
+
+        textarea {
+            resize: vertical; /* Permite esticar apenas para baixo */
+        }
+    }
+
+    /* COLUNA DA ESQUERDA */
+    .coluna-dados-anuncio {
+
+        /* Input de Preço customizado com o R$ acoplado */
+        .input-preco-wrapper {
+            display: flex;
+            align-items: center;
+            border: 1px solid #000;
+            border-radius: 4px;
+            overflow: hidden;
+            background-color: #fff;
+            max-width: 200px; /* Campo de valor não precisa ser gigante */
+
+            .moeda-prefixo {
+                background-color: #e5e5e5;
+                padding: 1rem;
+                font-weight: bold;
+                border-right: 1px solid #000;
+                font-size: 1.05rem;
+            }
+
+            input[type="number"] {
+                border: none;
+                padding: 1rem;
+                font-size: 1.05rem;
+                width: 100%;
+                outline: none;
+
+                /* Esconde as setinhas nativas do input number para um visual cleaner */
+                &::-webkit-outer-spin-button,
+                &::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+            }
+        }
+
+        /* Botões inferiores */
+        .acoes-formulario {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+
+            .btn-criar-anuncio {
+                padding: 0.8rem 1.2rem;
+            }
+
+            .btn-cancelar-anuncio {
+                padding: 0.8rem 1.2rem;
+            }
+        }
+    }
+
+    /* COLUNA DA DIREITA */
+    .coluna-midia-anuncio {
+
+        /* Estilização da área de arrastar/clicar arquivo */
+        .zona-upload-card {
+            border: 2px dashed #000;
+            border-radius: 6px;
+            background-color: #f9f9f9;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            display: block;
+            transition: background-color 0.2s;
+
+            input[type="file"] {
+                display: none; /* Esconde o botão cinza feio padrão do navegador */
+            }
+
+            .conteudo-zona-upload {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.8rem;
+
+                .symbols {
+                    font-size: 2.2rem;
+                    color: var(--cor-laranja);
+                }
+
+                strong {
+                    font-size: 1.05rem;
+                    color: #000;
+                    text-transform: lowercase;
+                }
+
+                p {
+                    margin: 0;
+                    font-size: 0.85rem;
+                    color: #666;
+                }
+            }
+
+            &:hover {
+                background-color: #f0f0f0;
+                border-color: var(--cor-laranja);
+            }
+        }
+
+        /* Caixa Informativa de Dicas */
+        .box-dicas-anuncio {
+            margin-top: 2.5rem;
+            border: 1px solid #ccc;
+            padding: 1.5rem;
+            border-radius: 6px;
+            background-color: #fff9e6; /* Tom leve amarelado para destacar insight */
+
+            .dicas-titulo {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin-bottom: 1rem;
+
+                .symbols { color: var(--cor-laranja); }
+                h3 { margin: 0; font-size: 1.15rem; text-transform: lowercase; font-weight: 600; }
+            }
+
+            ul {
+                margin: 0;
+                padding-left: 1.2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.6rem;
+
+                li {
+                    font-size: 0.95rem;
+                    color: #444;
+                    line-height: 1.4;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns:th="[http://www.thymeleaf.org](http://www.thymeleaf.org)" lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--google fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Finlandica+Text:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <!--css padrãao-->
+        <link rel="stylesheet" href="./css/utilities.css">
+        <link rel="stylesheet" href="./css/produto.css">
+        <title>Crie um Anúncio</title>
+    </head>
+
+    <body>
+
+        <!--essa tag é onde a header vai ser injetada pelo springboot-->
+        <header th:replace="~{fragments :: header}"></header>
+
+        <main class="conteudo">
+            <div class="layout-detalhe">
+
+                <section class="coluna-principal">
+
+                    <div class="galeria-container">
+                        <div class="foto-principal">
+                            <img src="/img/placeholder.png" alt="Foto principal do produto">
+                        </div>
+                        <div class="galeria-miniaturas">
+                            <img src="/img/placeholder.png" class="miniatura ativa" alt="Vista 1">
+                            <img src="/img/placeholder.png" class="miniatura" alt="Vista 2">
+                            <img src="/img/placeholder.png" class="miniatura" alt="Vista 3">
+                        </div>
+                    </div>
+
+                    <div class="produto-info-bloco">
+                        <h2 class="produto-nome">[NOME DO ITEM]</h2>
+                        <p class="produto-preco-base">R$: 00,00 / hora</p>
+
+                        <hr class="divisor-suave">
+
+                        <div class="produto-secao">
+                            <h3>Descrição do item</h3>
+                            <p class="descricao-texto">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                            </p>
+                        </div>
+
+                        <hr class="divisor-suave">
+
+                        <div class="produto-secao">
+                            <h3>Localização de quem publicou</h3>
+                            <div class="flex localizacao-dados">
+                                <span class="symbols">location_on</span>
+                                <p>Arthur Alvin, São Paulo - SP (Aproximadamente a 1.0 km de você)</p>
+                            </div>
+                            <div class="mapa-detalhe-placeholder">
+                                <p>[Mapa de Localização Aproximada]</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <aside class="coluna-lateral">
+
+                    <div class="card-acao-solicitar">
+                        <button type="button" class="f-18 c-btn btn-secundario btn-solicitar-principal" th:onclick="|window.location.href='@{/solicitacao}'|">Solicitar produto</button>
+                        <p class="aviso-solicitacao">O proprietário receberá uma notificação com o seu interesse imediato.</p>
+                    </div>
+
+                    <div class="card-perfil-anunciante">
+                        <div class="perfil-usuario-topo">
+                            <div class="avatar-container">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150" alt="Foto de perfil do usuário">
+                            </div>
+                            <div class="usuario-nomes">
+                                <span class="label-postado">publicado por:</span>
+                                <h4 class="usuario-nome-completo">Gabriela Ribeiro</h4>
+                            </div>
+                        </div>
+
+                        <div class="perfil-avaliacao">
+                            <div class="flex avaliacao-header">
+                                <span class="symbols estrela-icon">star</span>
+                                <span class="avaliacao-rotulo">Avaliação da comunidade</span>
+                            </div>
+                            <div class="nota-progresso-bloco">
+                                <div class="nota-display">
+                                    <strong class="nota-atual">9.2</strong>
+                                    <span class="nota-maxima">/ 10</span>
+                                </div>
+                                <div class="barra-nota-bg">
+                                    <div class="barra-nota-preenchimento" style="width: 92%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="perfil-acoes">
+                            <button type="button" class="c-btn btn-visualizar-perfil" th:onclick="|window.location.href='@{/perfil}'|">
+                                visualizar perfil
+                            </button>
+                        </div>
+                    </div>
+
+                </aside>
+            </div>
+            <hr class="divisor-suave secao-separador">
+
+            <section class="itens-parecidos-secao">
+                <h3>itens parecidos</h3>
+
+                <div class="grid-itens-parecidos">
+
+                    <article class="card-parecido">
+                        <div class="parecido-imagem">
+                            <img src="/img/placeholder.png" alt="Item parecido">
+                        </div>
+                        <div class="parecido-corpo">
+                            <h4 class="parecido-titulo">[titulo do item]</h4>
+                            <p class="parecido-preco">R$: 65,00 / hora</p>
+                            <p class="parecido-local">Itaquera - 2.3 km</p>
+                            <button type="button" class="btn-parecido-ver">ver anuncio</button>
+                        </div>
+                    </article>
+
+                    <article class="card-parecido">
+                        <div class="parecido-imagem">
+                            <img src="/img/placeholder.png" alt="Item parecido">
+                        </div>
+                        <div class="parecido-corpo">
+                            <h4 class="parecido-titulo">[titulo do item]</h4>
+                            <p class="parecido-preco">R$: 45,00 / hora</p>
+                            <p class="parecido-local">Guilhermina - 0.8 km</p>
+                            <button type="button" class="btn-parecido-ver">ver anuncio</button>
+                        </div>
+                    </article>
+
+                    <article class="card-parecido">
+                        <div class="parecido-imagem">
+                            <img src="/img/placeholder.png" alt="Item parecido">
+                        </div>
+                        <div class="parecido-corpo">
+                            <h4 class="parecido-titulo">[titulo do item]</h4>
+                            <p class="parecido-preco">R$: 30,00 / hora</p>
+                            <p class="parecido-local">Patriarca - 1.5 km</p>
+                            <button type="button" class="btn-parecido-ver">ver anuncio</button>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!--essa tage é onde o footer vai ser injetado pelo springboot-->
+        <footer th:replace="~{fragments :: footer}"></footer>
+        <script src="https://kit.fontawesome.com/2e9951a3e8.js" crossorigin="anonymous"></script>
+        <script src="utilities.js"></script>
+    </body>
+</html>

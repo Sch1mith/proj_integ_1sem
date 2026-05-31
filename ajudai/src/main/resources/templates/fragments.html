@@ -5,24 +5,27 @@
             <p>Menu</p>
         </summary>
         <div class="flex pages-link">
-            <a th:href="@{/anuncio_proximidade}">Faça um anúncio</a>
+            <a th:href="@{/anuncio_proximidade}">Faça um pedido</a>
             <a href="">Como funciona?</a>
             <a href="">Segurança</a>
             <a href="">Sobre nós</a>
             <div class="flex pages-link-usr">
-                <a href="">Solicitações</a>
+                <a th:href="@{/pedidos-recebidos}">Solicitações</a>
                 <a href="">Meus Anúncios</a>
                 <a href="">Histórico</a>
+                <a th:href="@{/criar-anuncio}">Criar um anuncio</a>
             </div>
         </div>
     </details>
 
     <a th:href="@{/}" class="f-37 c-logo c-link-logo">Ajudaí</a>
 
-    <button id="btn-conta" class="flex c-btn btn-login" type="button">
-        <span class="symbols f-28">person</span>
-        Entrar
-    </button>
+    <a th:href="@{/login}" class="a-btn">
+        <button id="btn-conta" class="flex c-btn btn-login" type="button">
+            <span class="symbols f-28">person</span>
+            Entrar
+        </button>
+    </a>
 </header>
 
 <h1>teste</h1>
@@ -34,7 +37,7 @@
     <span class="line-vertical"></span>
     <div class="flex column links">
         <p class="c-logo f-24">Ajudaí</p>
-        <a href="">Faça um anúncio</a>
+        <a th:href="@{/anuncio_proximidade}">Faça um pedido</a>
         <a href="">Como Funciona</a>
         <a href="">Segurança</a>
         <a href="">Sobre nós</a>
@@ -51,8 +54,10 @@
 </footer>
 
 <div th:fragment="form-pedido" class="pedido-form-container">
-    <h3>Faça um pedido na sua região</h3>
-    <p>escolha o raio de alcance que desejar, e o valor inicial que deseja pagar</p>
+    <div class="flex column texto">
+        <h3>Faça um pedido na sua região</h3>
+        <p>escolha o raio de alcance que desejar, e o valor inicial que deseja pagar</p>
+    </div>
     <form th:action="@{/anuncios/criar}" method="POST" class="form-pedido flex column">
 
         <div class="form-grupo flex column">
@@ -133,6 +138,76 @@
     </form>
 </div>
 
-<div th:fragment="lista-anuncios" class="sua-lista-estilizada">
-    <p>Lista de Anúncios Existentes</p>
+<div th:fragment="lista-anuncios" class="anuncios-container">
+
+    <div class="flex anuncios-header">
+        <span class="termo-busca">
+            Todos os anúncios
+        </span>
+
+        <div class="ordenacao">
+            <label for="sort-select">sort by:</label>
+            <select id="sort-select" class="select-clean">
+                <option value="distancia">distância</option>
+                <option value="preco">menor preço</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="flex column anuncios-lista">
+
+        <article class="flex anuncio-card">
+            <div class="card-imagem">
+                <img src="/img/placeholder.png" alt="Guitarra Stratocaster">
+            </div>
+            <div class="flex column card-conteudo">
+                <div class="flex column card-info">
+                    <h4 class="card-titulo">[Nome do produto]</h4>
+                    <p class="card-preco">R$: 00,00 / hora</p>
+                    <p class="card-localizacao">[Localização] - 1.0 km</p>
+                </div>
+                <div class="card-acoes">
+                    <a th:href="@{/produto}">
+                        <button type="button" class="c-btn btn-principal btn-ver-anuncio">ver anuncio</button>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="flex anuncio-card">
+            <div class="card-imagem">
+                <img src="/img/placeholder.png" alt="Guitarra Stratocaster">
+            </div>
+            <div class="flex column card-conteudo">
+                <div class="flex column card-info">
+                    <h4 class="card-titulo">[Nome do produto]</h4>
+                    <p class="card-preco">R$: 00,00 / hora</p>
+                    <p class="card-localizacao">[Localização] - 1.0 km</p>
+                </div>
+                <div class="card-acoes">
+                    <a th:href="@{/produto}">
+                        <button type="button" class="c-btn btn-principal btn-ver-anuncio">ver anuncio</button>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="flex anuncio-card">
+            <div class="card-imagem">
+                <img src="/img/placeholder.png" alt="Guitarra Stratocaster">
+            </div>
+            <div class="flex column card-conteudo">
+                <div class="flex column card-info">
+                    <h4 class="card-titulo">[Nome do produto]</h4>
+                    <p class="card-preco">R$: 00,00 / hora</p>
+                    <p class="card-localizacao">[Localização] - 1.0 km</p>
+                </div>
+                <div class="card-acoes">
+                    <a th:href="@{/produto}">
+                        <button type="button" class="c-btn btn-principal btn-ver-anuncio">ver anuncio</button>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </div>
 </div>

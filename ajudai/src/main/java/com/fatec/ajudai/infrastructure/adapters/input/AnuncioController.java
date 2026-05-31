@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 @Controller
 public class AnuncioController {
 
-  @GetMapping("/anuncios")
+    @GetMapping("/anuncios")
     public String paginaGeralAnuncios(@RequestParam(name = "q", required = false) String termoBusca, Model model) {
         
        if (termoBusca != null && !termoBusca.isBlank()) {
@@ -20,10 +20,13 @@ public class AnuncioController {
        return "anuncios"; 
     }
 
-    // 2. Sua rota antiga que você já configurou para o formulário direto
     @GetMapping("/anuncio_proximidade")
     public String paginaAnuncioProximidade() {
-        // Vai procurar o arquivo src/main/resources/templates/anuncio_proximidade.html
         return "anuncio_proximidade";
+    }
+
+    @GetMapping("/criar-anuncio")
+    public String paginaCriarAnuncio() {
+        return "criar-anuncio";
     }
 }

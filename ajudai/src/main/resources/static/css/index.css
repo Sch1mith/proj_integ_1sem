@@ -159,20 +159,18 @@
                         justify-content: space-around;
                         margin-bottom: 0.5rem;
                         margin-top: auto;
-                        .btn-detalhes {
-                            padding: 0.5rem 0.8rem;
+                        a {
+                            text-decoration: none;
+                            .btn-detalhes {
+                                padding: 0.5rem 0.8rem;
+                            }
                         }
-
                         .btn-favorite {
                             background: none;
                             border: none;
                             padding: 0;
                             cursor: pointer;
                             outline: none;
-                        }
-
-                        & > span {
-
                         }
                     }
                 }
@@ -286,7 +284,6 @@
             }
         }
 
-        /* --- MEDIA QUERY ANINHADO --- */
         @media (max-width: 768px) {
             flex-direction: column;
             text-align: center;
