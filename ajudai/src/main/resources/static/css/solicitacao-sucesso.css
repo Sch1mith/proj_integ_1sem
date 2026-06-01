@@ -1,0 +1,127 @@
+.conteudo {
+    width: 100%;
+    min-height: 75vh; /* Ocupa a maior parte da tela para centralizar verticalmente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+
+    .card-confirmacao {
+        max-width: 550px;
+        width: 100%;
+        background-color: #f9f9f9;
+        border: 1px solid #000;
+        border-radius: 6px;
+        padding: 3rem 2.5rem;
+        text-align: center;
+        box-shadow: 4px 4px 0px #000;
+
+        /* Estilização do Ícone Circular */
+        .icone-feedback-wrapper {
+            width: 80px;
+            height: 80px;
+            background-color: #fff9e6; /* Fundo suave de aviso/espera */
+            border: 1px solid #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+            box-shadow: 2px 2px 0px #000;
+
+            .symbols {
+                font-size: 2.5rem;
+                color: #ff7a00; /* Laranja característico do Ajudaí */
+            }
+        }
+
+        .titulo-confirmacao {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 0 1rem 0;
+            text-transform: lowercase;
+        }
+
+        .texto-confirmacao {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #444;
+            margin: 0 0 2rem 0;
+        }
+
+        /* Caixa interna com instruções do fluxo */
+        .box-proximos-passos {
+            background-color: #e5e5e5;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 1.2rem;
+            text-align: left;
+            margin-bottom: 2.5rem;
+
+            strong {
+                font-size: 1rem;
+                display: block;
+                margin-bottom: 0.5rem;
+                text-transform: lowercase;
+                color: #000;
+            }
+
+            ul {
+                margin: 0;
+                padding-left: 1.2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                li {
+                    font-size: 0.9rem;
+                    color: #333;
+                    line-height: 1.4;
+                }
+            }
+        }
+
+        /* Alinhamento dos botões finais */
+        .acoes-confirmacao {
+            display: flex;
+            flex-direction: column; /* No mobile vira pilha, no desktop mantém o foco central */
+            gap: 1rem;
+            align-items: center;
+
+            .btn-ver-pedidos {
+                width: 100%;
+                background-color: #ff7a00;
+                color: #000;
+                border: 1px solid #000;
+                padding: 1rem;
+                font-size: 1.05rem;
+                font-weight: bold;
+                text-decoration: none;
+                text-transform: lowercase;
+                border-radius: 4px;
+                box-shadow: 2px 2px 0px #000;
+                box-sizing: border-box;
+                display: block;
+
+                &:active {
+                    transform: translate(1px, 1px);
+                    box-shadow: 0px 0px 0px #000;
+                }
+            }
+
+            .btn-voltar-home {
+                font-size: 1rem;
+                color: #555;
+                text-decoration: none;
+                font-weight: 600;
+                text-transform: lowercase;
+
+                &:hover {
+                    color: #000;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

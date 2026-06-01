@@ -6,15 +6,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.ui.Model; 
 
 @Controller
-public class SolicitacaoController {
+public class MinhasSolicitacoesController {
 
-    @GetMapping("/solicitacao")
-    public String paginaSolicitacao() {
-        return "solicitacao";
-    }
-
-    @GetMapping("/sucesso")
-    public String paginaSucesso () {
-        return "solicitacao-sucesso";
+    @GetMapping("/minhas-solicitacoes")
+    public String paginaMinhasSolicitacao() {
+        return "minhas-solicitacoes";
     }
 }

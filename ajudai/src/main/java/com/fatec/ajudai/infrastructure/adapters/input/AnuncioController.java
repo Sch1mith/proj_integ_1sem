@@ -29,4 +29,9 @@ public class AnuncioController {
     public String paginaCriarAnuncio() {
         return "criar-anuncio";
     }
+
+    @GetMapping("/solicitacao-sucesso")
+    public String paginaAnuncioSucesso() {
+      return "anuncio-proximidade-sucesso";
+    }
 }

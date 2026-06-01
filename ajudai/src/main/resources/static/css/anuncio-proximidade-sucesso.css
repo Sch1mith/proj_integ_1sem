@@ -1,0 +1,145 @@
+.conteudo {
+    width: 100%;
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+
+    .card-sucesso-regiao {
+        max-width: 550px;
+        width: 100%;
+        background-color: #f9f9f9;
+        border: 1px solid #000;
+        border-radius: 6px;
+        padding: 3rem 2.5rem;
+        text-align: center;
+        box-shadow: 4px 4px 0px #000;
+
+        /* Ícone com estética de Radar/Wireless */
+        .icone-radar-wrapper {
+            width: 80px;
+            height: 80px;
+            background-color: #f0fdf4; /* Tom esverdeado suave de ação concluída com sucesso */
+            border: 1px solid #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+            box-shadow: 2px 2px 0px #000;
+
+            .symbols {
+                font-size: 2.5rem;
+                color: #2ecc71; /* Verde para indicar que o sinal foi emitido */
+            }
+        }
+
+        .titulo-sucesso {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 0 1rem 0;
+            text-transform: lowercase;
+        }
+
+        .texto-sucesso {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #444;
+            margin: 0 0 2rem 0;
+        }
+
+        /* Box de status com efeito de pulso animado CSS */
+        .box-status-transmissao {
+            background-color: #e5e5e5;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 1.2rem;
+            text-align: left;
+            margin-bottom: 2.5rem;
+
+            .linha-status-radar {
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+                margin-bottom: 0.8rem;
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 0.6rem;
+
+                p {
+                    margin: 0;
+                    font-size: 0.95rem;
+                    font-weight: bold;
+                    color: #000;
+                }
+
+                /* Pequenino ponto piscando para simular atividade real de busca */
+                .ponto-pulsante {
+                    width: 10px;
+                    height: 10px;
+                    background-color: #ff7a00;
+                    border-radius: 50%;
+                    display: inline-block;
+                    animation: pulsarSinal 1.5s infinite ease-in-out;
+                }
+            }
+
+            ul {
+                margin: 0;
+                padding-left: 1.2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                li {
+                    font-size: 0.9rem;
+                    color: #333;
+                    line-height: 1.4;
+                }
+            }
+        }
+
+        /* Alinhamento das ações */
+        .acoes-sucesso {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+
+            .btn-acompanhar-pedido {
+                width: 100%;
+                background-color: #ff7a00;
+                color: #000;
+                border: 1px solid #000;
+                padding: 1rem;
+                font-size: 1.05rem;
+                font-weight: bold;
+                text-decoration: none;
+                text-transform: lowercase;
+                border-radius: 4px;
+                box-shadow: 2px 2px 0px #000;
+                box-sizing: border-box;
+                display: block;
+
+                &:active {
+                    transform: translate(1px, 1px);
+                    box-shadow: 0px 0px 0px #000;
+                }
+            }
+
+            .btn-retornar-home {
+                font-size: 1rem;
+                color: #555;
+                text-decoration: none;
+                font-weight: 600;
+                text-transform: lowercase;
+
+                &:hover {
+                    color: #000;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

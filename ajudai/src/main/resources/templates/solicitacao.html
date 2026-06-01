@@ -25,7 +25,7 @@
 
                 <!-- COLUNA ESQUERDA: Formulário de Solicitação -->
                 <section class="coluna-formulario">
-                    <form th:action="@{/}" class="form-solicitacao">
+                    <form th:action="@{/sucesso}" class="form-solicitacao">
 
                         <!-- Período de Uso (Data e Hora) -->
                         <fieldset class="secao-form-bloco">
@@ -89,7 +89,7 @@
 
                         <!-- Botões de Ação -->
                         <div class="acoes-solicitacao">
-                            <a th:hraf="@{/}">
+                            <a th:href="@{/sucesso}">
                                 <button type="submit" class="btn-enviar-solicitacao">Enviar Solicitação</button>
                             </a>
                             <a th:href="@{/produto}" class="btn-cancelar-solicitacao">Cancelar</a>

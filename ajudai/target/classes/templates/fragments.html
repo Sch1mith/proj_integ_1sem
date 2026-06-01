@@ -10,10 +10,11 @@
             <a href="">Segurança</a>
             <a href="">Sobre nós</a>
             <div class="flex pages-link-usr">
-                <a th:href="@{/pedidos-recebidos}">Solicitações</a>
-                <a href="">Meus Anúncios</a>
-                <a href="">Histórico</a>
+                <a th:href="@{/pedidos-recebidos}">Pedidos recebidos</a>
+                <a th:href="@{/perfil}">Meus Anúncios</a>
+                <a th:href="@{/perfil}">Histórico</a>
                 <a th:href="@{/criar-anuncio}">Criar um anuncio</a>
+                <!-- <a th:href="@{/minhas-solicitacoes}">Minhas Solicitações</a> -->
             </div>
         </div>
     </details>
@@ -58,11 +59,11 @@
         <h3>Faça um pedido na sua região</h3>
         <p>escolha o raio de alcance que desejar, e o valor inicial que deseja pagar</p>
     </div>
-    <form th:action="@{/anuncios/criar}" method="POST" class="form-pedido flex column">
+    <form th:action="@{/solicitacao-sucesso}" class="form-pedido flex column">
 
         <div class="form-grupo flex column">
             <label th:for="titulo">Título do pedido</label>
-            <input type="text" id="titulo" name="titulo" placeholder="Ex: Guitarra" required>
+            <input type="text" id="titulo" name="titulo" placeholder="Ex: Guitarra">
         </div>
 
         <div class="form-grupo flex column">
@@ -87,27 +88,27 @@
 
                 <div class="form-grupo campo-rua">
                     <label th:for="rua">Rua / Logradouro</label>
-                    <input type="text" id="rua" name="rua" placeholder="Ex: Rua Celso Garcia" required>
+                    <input type="text" id="rua" name="rua" placeholder="Ex: Rua Celso Garcia">
                 </div>
 
                 <div class="form-grupo campo-numero">
                     <label th:for="numero">Número</label>
-                    <input type="text" id="numero" name="numero" placeholder="Ex: 887" required>
+                    <input type="text" id="numero" name="numero" placeholder="Ex: 887" >
                 </div>
 
                 <div class="form-grupo campo-bairro">
                     <label th:for="bairro">Bairro</label>
-                    <input type="text" id="bairro" name="bairro" placeholder="Ex: Guilhermina" required>
+                    <input type="text" id="bairro" name="bairro" placeholder="Ex: Guilhermina">
                 </div>
 
                 <div class="form-grupo campo-cidade">
                     <label th:for="cidade">Cidade</label>
-                    <input type="text" id="cidade" name="cidade" placeholder="Ex: São Paulo" required>
+                    <input type="text" id="cidade" name="cidade" placeholder="Ex: São Paulo">
                 </div>
 
                 <div class="form-grupo campo-estado">
                     <label th:for="estado">Estado (UF)</label>
-                    <input type="text" id="estado" name="estado" maxlength="2" placeholder="Ex: SP" required>
+                    <input type="text" id="estado" name="estado" maxlength="2" placeholder="Ex: SP">
                 </div>
 
             </div>
@@ -126,13 +127,13 @@
             <label th:for="valorInicial">Valor Inicial:</label>
             <div class="flex entrada-valor">
                 <span>R$: </span>
-                <input type="number" id="valorInicial" name="valorInicial" step="0.01" placeholder="60,00" required>
+                <input type="number" id="valorInicial" name="valorInicial" step="0.01" placeholder="60,00">
                 <span> /Hora</span>
             </div>
         </div>
 
         <div class="form-acoes flex">
-            <button type="submit" class="btn-submeter c-btn btn-secundario">Postar pedido</button>
+            <button type="submit" class="btn-submeter c-btn btn-secundario" th:onclick="|window.location.href='@{/solicitacao-sucesso}'|">Postar pedido</button>
         </div>
 
     </form>

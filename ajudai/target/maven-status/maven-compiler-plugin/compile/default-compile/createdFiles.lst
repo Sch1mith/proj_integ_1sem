@@ -1,5 +1,6 @@
 com/fatec/ajudai/ChatController.class
 com/fatec/ajudai/ProdutoController.class
+com/fatec/ajudai/MinhasSolicitacoesController.class
 com/fatec/ajudai/PedidosController.class
 com/fatec/ajudai/LoginController.class
 com/fatec/ajudai/CadastroController.class

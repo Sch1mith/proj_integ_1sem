@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="[http://www.thymeleaf.org](http://www.thymeleaf.org)" lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--google fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Finlandica+Text:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <!--css padrãao-->
+        <link rel="stylesheet" href="./css/utilities.css">
+        <link rel="stylesheet" href="./css/solicitacao-sucesso.css">
+        <title>Ajudaí - Sucesso</title>
+    </head>
+
+    <body>
+
+        <!--essa tag é onde a header vai ser injetada pelo springboot-->
+        <header th:replace="~{fragments :: header}"></header>
+
+        <main class="conteudo">
+            <div class="card-confirmacao">
+
+                <div class="icone-feedback-wrapper">
+                    <span class="symbols">schedule</span>
+                </div>
+
+                <h2 class="titulo-confirmacao">solicitação enviada!</h2>
+
+                <p class="texto-confirmacao">
+                    Sua proposta foi encaminhada com sucesso. Agora, o proprietário do item recebeu uma notificação e tem até 48 horas para aceitar ou recusar o pedido.
+                </p>
+
+                <div class="box-proximos-passos">
+                    <strong>o que acontece agora?</strong>
+                    <ul>
+                        <li>Se o dono aceitar, um chat será aberto automaticamente para vocês combinarem a entrega.</li>
+                        <li>Você pode acompanhar o status desse pedido a qualquer momento no seu painel.</li>
+                    </ul>
+                </div>
+
+                <div class="acoes-confirmacao">
+                    <a th:href="@{/meus-pedidos}" class="btn-ver-pedidos">ver minhas solicitações</a>
+                    <a th:href="@{/}" class="btn-voltar-home">voltar para o início</a>
+                </div>
+
+            </div>
+
+        </main>
+
+        <!--essa tage é onde o footer vai ser injetado pelo springboot-->
+        <footer th:replace="~{fragments :: footer}"></footer>
+        <script src="https://kit.fontawesome.com/2e9951a3e8.js" crossorigin="anonymous"></script>
+        <script src="utilities.js"></script>
+    </body>
+</html>

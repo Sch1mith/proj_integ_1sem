@@ -1,0 +1,232 @@
+.conteudo {
+    width: 100%;
+    max-width: 850px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+
+    .titulo-pagina {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        text-transform: lowercase;
+        font-weight: 700;
+    }
+
+    /* Sistema de Abas (Reaproveitado do painel de recebidos) */
+    .abas-solicitacoes {
+        display: flex;
+        gap: 1rem;
+        border-bottom: 2px solid #ccc;
+        margin-bottom: 2.5rem;
+
+        .btn-aba {
+            background: none;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: #666;
+            text-transform: lowercase;
+            position: relative;
+            top: 2px;
+
+            &.ativa {
+                color: #000;
+                border-bottom: 3px solid #ff7a00;
+            }
+        }
+    }
+
+    /* Grid/Lista de Cards */
+    .lista-solicitacoes-enviadas {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .card-solicitacao {
+        background-color: #f9f9f9;
+        border: 1px solid #000;
+        border-radius: 6px;
+        padding: 1.5rem;
+        box-shadow: 3px 3px 0px #000;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+
+        /* Cabeçalho do card */
+        .solicitacao-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 1rem;
+
+            .info-proprietario {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                .avatar-dono {
+                    width: 44px;
+                    height: 44px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    border: 1px solid #000;
+                }
+
+                h3 {
+                    font-size: 1.1rem;
+                    margin: 0;
+                    font-weight: 500;
+                    strong { font-weight: 700; }
+                }
+
+                .data-envio {
+                    font-size: 0.85rem;
+                    color: #666;
+                    margin: 0;
+                }
+            }
+
+            /* Badges Dinâmicos de Status */
+            .badge-status {
+                padding: 0.4rem 0.8rem;
+                border-radius: 4px;
+                font-size: 0.85rem;
+                font-weight: bold;
+                text-transform: lowercase;
+                border: 1px solid #000;
+
+                &.analise {
+                    background-color: #fff9e6;
+                    color: #b7791f;
+                    border-color: #fbd38d;
+                }
+
+                &.aprovado {
+                    background-color: #e6fffa;
+                    color: #234e52;
+                    border-color: #b2f5ea;
+                }
+            }
+        }
+
+        /* Corpo do Card */
+        .solicitacao-corpo {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 1.5rem;
+            align-items: center;
+
+            .solicitacao-produto {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+
+                .img-miniatura {
+                    width: 55px;
+                    height: 55px;
+                    background-color: #fff;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    padding: 0.2rem;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                }
+
+                h4 {
+                    font-size: 1.05rem;
+                    margin: 0 0 0.2rem 0;
+                    text-transform: lowercase;
+                }
+
+                .resumo-valores {
+                    font-size: 0.9rem;
+                    color: #444;
+                    margin: 0;
+                }
+            }
+
+            .solicitacao-logistica {
+                display: flex;
+                flex-direction: column;
+                gap: 0.3rem;
+
+                p {
+                    margin: 0;
+                    font-size: 0.95rem;
+                    color: #333;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.4rem;
+
+                    .symbols {
+                        font-size: 1.1rem;
+                        color: #ff7a00;
+                    }
+                }
+            }
+        }
+
+        /* Rodapé com ações baseadas no status */
+        .solicitacao-acoes {
+            border-top: 1px solid #e0e0e0;
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .aviso-status {
+                font-size: 0.9rem;
+                color: #666;
+                margin: 0;
+                font-style: italic;
+
+                &.sucesso {
+                    color: #2e7d32;
+                    font-weight: 500;
+                }
+            }
+
+            button {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.95rem;
+                font-weight: bold;
+                cursor: pointer;
+                text-transform: lowercase;
+                border-radius: 4px;
+            }
+
+            .btn-cancelar-pedido {
+                background: none;
+                border: none;
+                color: #777;
+
+                &:hover {
+                    color: #c0392b;
+                    text-decoration: underline;
+                }
+            }
+
+            .btn-combinar-chat {
+                background-color: #ff7a00;
+                color: #000;
+                border: 1px solid #000;
+                box-shadow: 2px 2px 0px #000;
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
+
+                &:active {
+                    transform: translate(1px, 1px);
+                    box-shadow: 0px 0px 0px #000;
+                }
+            }
+        }
+    }
+}
