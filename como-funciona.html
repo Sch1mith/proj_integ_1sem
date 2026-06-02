@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns:th="[http://www.thymeleaf.org](http://www.thymeleaf.org)" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Finlandica+Text:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <!--css padrãao-->
+        <link rel="stylesheet" href="./css/utilities.css">
+        <link rel="stylesheet" href="./css/como-funciona.css"> 
+
+    <title>Ajudaí - Como funciona</title>
+</head>
+
+<body>
+
+    <!--essa tag é onde a header vai ser injetada pelo springboot-->
+    <header th:replace="~{fragments :: header}"></header>
+    <main class="conteudo">
+        <section class="how-it-works bg-yellow full-bleed">
+            <div class="container">
+                <h1 class="typing-title js-typing" data-highlight="Ajudaí">O que é o Ajudaí?</h1>
+                <p class="anim-fade-up">
+                    O Ajudaí é uma plataforma feita para conectar pessoas que precisam de
+                    ferramentas, equipamentos ou itens temporários com usuários próximos
+                    que podem ajudar.
+                </p>
+            </div>
+        </section>
+        <section class="how-cards-section">
+            <div class="container">
+                <div class="how-it-works-cards flex wrap">
+                    <div class="how-card">
+                        <span class="symbols fill">edit_note</span>
+                        <h2>Faça seu pedido</h2>
+                        <p>
+                            Informe o item que você precisa, como ferramenta,
+                            equipamento ou material para o seu projeto.
+                        </p>
+                    </div>
+                    <div class="how-card">
+                        <span class="symbols fill">location_on</span>
+                        <h2>Encontre itens próximos</h2>
+                        <p>
+                            Veja anúncios disponíveis na sua região e encontre
+                            usuários próximos que podem ajudar.
+                        </p>
+                    </div>
+                    <div class="how-card">
+                        <span class="symbols fill">handshake</span>
+
+                        <h2>Combine os detalhes</h2>
+                        <p>
+                            Converse, acerte o valor ou a forma de empréstimo
+                            e finalize o pedido de forma simples.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ajudai-feature">
+            <div class="ajudai-feature-wrapper">
+                <div class="ajudai-feature-content">
+                    <span class="ajudai-feature-tag">Ajudaí perto de você</span>
+                    <h2 class="ajudai-feature-title">
+                        Ferramentas, itens e ajudas rápidas na sua região
+                    </h2>
+                    <p class="ajudai-feature-text">
+                        Encontre ferramentas, equipamentos e itens temporários com pessoas
+                        próximas de você. Faça um pedido, veja opções na sua região e
+                        combine tudo de forma simples, rápida e econômica.
+                    </p>
+                    <div class="ajudai-feature-actions flex wrap">
+                        <a href="#" class="ajudai-feature-button">Ver itens disponíveis</a>
+                        <a href="#" class="ajudai-feature-link">Como funciona</a>
+                    </div>
+                    <ul class="ajudai-feature-benefits flex column">
+                        <li class="flex">
+                            <span class="symbols">check_circle</span>
+                            Pedidos por proximidade
+                        </li>
+                        <li class="flex">
+                            <span class="symbols">check_circle</span>
+                            Itens úteis para o dia a dia
+                        </li>
+                        <li class="flex">
+                            <span class="symbols">check_circle</span>
+                            Mais economia e praticidade
+                        </li>
+                    </ul>
+                </div>
+                <div class="ajudai-feature-visual">
+                    <div class="ajudai-feature-main-card">
+                        <div class="ajudai-feature-main-top flex">
+                            <span class="ajudai-feature-badge">Mais procurado</span>
+                            <span class="ajudai-feature-distance flex">
+                                <span class="symbols">location_on</span>
+                                2,3 km de você
+                            </span>
+                        </div>
+                        <div class="ajudai-feature-item flex">
+                            <div class="ajudai-feature-item-icon flex">
+                                <span class="symbols">construction</span>
+                            </div>
+                            <div class="ajudai-feature-item-info">
+                                <h3>Kit de ferramentas</h3>
+                                <p>
+                                    Furadeira, chave, escada e itens para pequenos reparos
+                                </p>
+                                <div class="ajudai-feature-meta flex wrap">
+                                    <span>Disponível hoje</span>
+                                    <span>Retirada ou entrega</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ajudai-feature-provider-card flex">
+                            <div class="ajudai-feature-provider-avatar flex">
+                                <span class="symbols">person</span>
+                            </div>
+                            <div class="ajudai-feature-provider-info">
+                                <strong>Marina Souza</strong>
+                                <p>Usuária verificada • São Paulo</p>
+                                <div class="ajudai-feature-rating flex">
+                                    <span>4.9</span>
+                                    <div class="ajudai-feature-stars flex">
+                                        <span class="symbols">star</span>
+                                        <span class="symbols">star</span>
+                                        <span class="symbols">star</span>
+                                        <span class="symbols">star</span>
+                                        <span class="symbols">star</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ajudai-feature-side-info">
+                        <div class="ajudai-feature-mini-card">
+                            <span class="symbols">bolt</span>
+                            <strong>Rápido</strong>
+                            <p>Encontre opções sem dor de cabeça</p>
+                        </div>
+                        <div class="ajudai-feature-mini-card">
+                            <span class="symbols">savings</span>
+                            <strong>Econômico</strong>
+                            <p>Use quando precisar, sem precisar comprar o item</p>
+                        </div>
+                        <div class="ajudai-feature-mini-card">
+                            <span class="symbols">groups</span>
+                            <strong>Colaborativo</strong>
+                            <p>Conecte pessoas da mesma região</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="provider-steps">
+            <div class="provider-steps-container">
+                <div class="provider-steps-header">
+                    <span class="provider-steps-tag">Para prestadores</span>
+                    <h2 class="provider-steps-title">
+                        Como o Ajudaí funciona para prestadores de serviços?
+                    </h2>
+                    <p class="provider-steps-text">
+                        Cadastre seus serviços, receba pedidos da sua região e combine
+                        diretamente com pessoas que precisam de ajuda no dia a dia.
+                    </p>
+                </div>
+                <div class="provider-steps-list">
+                    <div class="provider-step">
+                        <div class="provider-step-icon flex">
+                            <span class="symbols">edit_note</span>
+                        </div>
+                        <span class="provider-step-number flex">1</span>
+                        <h3 class="provider-step-title">Cadastre seu serviço</h3>
+                        <p class="provider-step-text">
+                            Informe o que você oferece, sua região de atendimento,
+                            disponibilidade e uma breve descrição do seu trabalho.
+                        </p>
+                    </div>
+                    <div class="provider-step">
+                        <div class="provider-step-icon flex">
+                            <span class="symbols">notifications</span>
+                        </div>
+                        <span class="provider-step-number flex">2</span>
+                        <h3 class="provider-step-title">Receba pedidos</h3>
+                        <p class="provider-step-text">
+                            Veja solicitações de usuários próximos e acompanhe novas
+                            oportunidades de serviço pelo Ajudaí.
+                        </p>
+                    </div>
+                    <div class="provider-step">
+                        <div class="provider-step-icon flex">
+                            <span class="symbols">forum</span>
+                        </div>
+                        <span class="provider-step-number flex">3</span>
+                        <h3 class="provider-step-title">Combine os detalhes</h3>
+                        <p class="provider-step-text">
+                            Converse com o cliente, alinhe preço, horário, local e
+                            outras informações importantes antes de aceitar o pedido.
+                        </p>
+                    </div>
+                    <div class="provider-step">
+                        <div class="provider-step-icon flex">
+                            <span class="symbols">payments</span>
+                        </div>
+                        <span class="provider-step-number flex">4</span>
+                        <h3 class="provider-step-title">Realize e receba</h3>
+                        <p class="provider-step-text">
+                            Faça o serviço combinado, finalize o atendimento e construa
+                            uma boa reputação dentro da plataforma.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--essa tage é onde o footer vai ser injetado pelo springboot-->
+    <footer th:replace="~{fragments :: footer}"></footer>
+    <script src="https://kit.fontawesome.com/2e9951a3e8.js" crossorigin="anonymous"></script>
+    <script src="utilities.js"></script>
+    <script src="como-funciona.js"></script>
+</body>
+
+</html>
