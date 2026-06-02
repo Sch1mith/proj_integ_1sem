@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+/*esse root é onde vão ficar a variaves do nosso site, pra ficar mais facil de padronizar tudo*/
+:root{
+    --cor-azul: hsl(199 71% 67%);
+    --cor-azul-claro: hsl(199 30% 90%);
+    --cor-azul-contraste: hsl(199 71% 50%);
+    --cor-roxo: hsl(260 70% 50%);
+    --cor-laranja: hsl(18 100% 58%);
+    --cor-laranja-contraste: hsl(20 100% 53%);
+    --cor-cinza-claro: hsl(0 2% 55%);
+    --cor-cinza-claro-2: hsl(0 2% 65%);
+    --cor-cinza-escuro: hsl(0 5% 30%);
+    --cor-branco: hsl(192 0% 100%);
+    --cor-preto: hsl(0 0% 5%);
+    --f-logo:  'Momo Trust Display', sans-serif !important;
+    --f-titulo: 'Nunito', sans-serif;
+    --f-padrao: 'Finlandica Text', sans-serif;
+    --f-icons: 'Material Symbols', sans-serif;
+    --icon-weight: 400;
+    --icon-fill: 0; /*mudar par 1 faz o icone ficar preenchido*/
+    --icon-grad: 0;
+    --icon-opsz: 24;
+}
+
+/*utilitários*/
+.symbols{
+    font-family: 'Material Symbols Rounded';
+    display: inline-block;
+    line-height: 1;
+    font-variation-settings:
+        'wght' var(--icon-weight),
+        'FILL' var(--icon-fill),
+        'GRAD' var(--icon-grad),
+        'opsz' var(--icon-opsz);
+}
+
+.w-700{--icon-weight: 700;}
+.w-600{--icon-weight: 600;}
+.w-500{--icon-weight: 500;}
+.w-300{--icon-weight: 300;}
+.w-200{--icon-weight: 200;}
+.w-100{--icon-weight: 100;}
+
+.f-16{font-size: 1.6rem;}
+.f-18{font-size: 1.8rem;}
+.f-20{font-size: 2rem;}
+.f-24{font-size: 2.4rem;}
+.f-26{font-size: 2.6rem;}
+.f-28{font-size: 2.8rem;}
+.f-32{font-size: 3.2rem;}
+.f-37{font-size: 3.7rem;}
+
+.fill{--icon-fill: 1;}
+
+.flex {display: flex;}
+
+.column{flex-direction: column;}
+
+.wrap{flex-wrap: wrap;}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--f-titulo);
+}
+
+.line-vertical {
+    z-index: 1;
+    position: relative;
+    margin-left: -15rem;
+    margin-right: -15rem;
+    margin-top: 5rem;
+    width: 1px;
+    height: 12rem;
+    background: var(--cor-preto);
+}
+
+.line-horizontal {
+    z-index: 1;
+    position: relative;
+    height: 1px;
+    background: var(--cor-preto);
+}
+
+.c-logo {
+    font-family: var(--f-logo);
+    font-weight: 400;
+    font-style: normal;
+    color: var(--cor-laranja-contraste);
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.c-btn {
+    font-family: var(--f-titulo);
+    font-weight: 700;
+    align-items: center;
+    font-size: 1.7rem;
+    background: var(--cor-branco);
+    border: none;
+    box-shadow: 2px 2px 4px #0008,
+                -2px -2px 4px #0003;
+    border-radius: 1.4rem;
+    cursor: pointer;
+    &:hover {
+        outline: 1px solid #0008;
+        box-shadow: inset 0px 0px 3px #000000;
+    }
+}
+
+.btn-principal {
+    background: var(--cor-laranja);
+    &:focus {
+        background: var(--cor-laranja-contraste);
+    }
+}
+
+.btn-secundario {
+    background: var(--cor-azul);
+    &:focus {
+        background: var(--cor-azul-contraste);
+    }
+}
+
+.btn-login {
+    font-size: 1.6rem;
+    box-shadow: 0px 0px 1px #000000;
+    border-radius: 1.4rem;
+    span {
+        margin-bottom: 2px;
+    }
+}
+
+html {
+    font-size: 62.5%;
+    background-color: var(--cor-branco);
+}
+
+body {
+    font-family: var(--f-padrao);
+    font-weight: 400;
+    font-size: 1.6rem;
+    margin: 1lvh 1lvw;
+    .c-header{
+        position: relative;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+        padding-left: 0.5rem;
+        padding-right: 1rem;
+        .pages{
+            position: relative;
+            margin: -5px 2px;
+            -webkit-user-select: none;
+            user-select: none;
+
+            summary {
+                display: flex;
+                align-items: center;
+                list-style: none;
+                gap: 0.5rem;
+                cursor: pointer;
+                &::-webkit-details-marker { display: none; }
+            }
+
+            p {
+                font-family: var(--f-titulo);
+                font-weight: 700;
+                font-size: 1.6rem;
+            }
+
+            .pages-link {
+                position: absolute;
+                top: 122%;
+                left: 0%;
+                z-index: 1;
+                align-items: center;
+                width: max-content;
+                background: var(--cor-branco);
+                gap: 2rem;
+                padding: 1.5rem 2rem;
+                border-radius: 0.8rem;
+                border-bottom: 1px solid var(--cor-preto);
+                box-shadow: 1px 1px 10px #0006;
+                a {
+                    font-weight: 600;
+                    color: var(--cor-preto);
+                    transition: color 0.2s ease;
+                    text-decoration: none;
+                    font-size: 1.4rem;
+                    &:visited {
+                        color: var(--cor-preto);
+                    }
+                    &:hover {
+                        color: var(--cor-azul);
+                    }
+                }
+            }
+
+            .pages-link-usr {
+                display: none;
+                gap: 2rem;
+                &::before {
+                    content: "";
+                    width: 1px;
+                    background: var(--cor-preto);
+                }
+            }
+        }
+
+        .c-link-logo {
+            text-decoration: none;
+            color: var(--cor-laranja-contraste);
+            text-shadow: -0.5px -0.5px 1px var(--cor-cinza-claro-2),
+                             0.5px -0.5px 1px var(--cor-cinza-claro-2),
+                             -0.5px 0.5px 1px var(--cor-cinza-claro-2),
+                             0.5px 0.5px 1px var(--cor-cinza-claro-2);
+            -webkit-user-select: none;
+            user-select: none;
+            cursor: pointer;
+            &:visited {
+                text-decoration: none;
+                color: var(--cor-laranja-contraste);
+            }
+            &:hover {
+                color: var(--cor-laranja-contraste);
+            }
+        }
+
+        button{
+            padding: 0.6rem 1rem;
+        }
+
+
+        &::after{
+            content: "";
+            position: absolute;
+            bottom: -1.5rem;
+            left: -1lvw;
+            right: -1lvw;
+            overflow: hidden;
+            height: 1px;
+            background-color: var(--cor-preto);
+            box-shadow: 0px 2px 2px var(--cor-cinza-claro);
+        }
+    }
+
+    @media(width <= 480) {
+        padding: 1rem;
+    }
+
+    .c-footer {
+        font-family: var(--f-padrao);
+        position: relative;
+        justify-content: space-around;
+        align-items: center;
+        max-height: 19rem;
+
+        .play-store-link {
+
+            .play-store-icon {
+                widht: 6.5rem;
+                height: 6.5rem;
+                cursor: pointer;
+            }
+        }
+
+        .links{
+            gap: 0.4rem;
+            p {
+                margin-bottom: 0.5rem;
+            }
+            a{
+                color: var(--cor-roxo);
+                &:visited{ color: var(--cor-roxo); }
+            }
+        }
+
+        .sociais {
+
+            .sociais-icons {
+                font-size: 3rem;
+                justify-content: center;
+                gap: 3rem;
+                span {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 1.5rem;
+            left: -1lvw;
+            right: -1lvw;
+            overflow: hidden;
+            height: 1px;
+            background-color: var(--cor-preto);
+            box-shadow: 0px -2px 2px var(--cor-cinza-claro);
+        }
+    }
+}

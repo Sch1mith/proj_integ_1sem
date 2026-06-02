@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link href="https://fonts.googleapis.com/css2?family=Finlandica+Text:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <!--css padrao-->
+        <link rel="stylesheet" href="sobre-nos.css">
+        <link rel="stylesheet" href="utilities.css">
+        <title>Sobre Nós — Ajudaí</title>
+
+    </head>
+
+    <body>
+
+        <!--essa tag é onde a header vai ser injetada pelo springboot-->
+        <header th:replace="~{fragments :: header}"></header>
+
+        <main class=".conteudo">
+
+            <!-- ── INTRO ── -->
+            <section class="sn-intro">
+                <p class="sn-intro-label">Quem somos</p>
+                <h1>O <em>Ajudaí</em> nasceu da ideia<br>de que emprestar é cuidar</h1>
+                <div class="sn-intro-divisor"></div>
+                <div class="sn-intro-cols">
+                    <p>
+                        O <strong>Ajudaí</strong> é uma plataforma web que conecta pessoas que precisam
+                        de um objeto por um curto período de tempo com vizinhos e membros da comunidade
+                        dispostos a emprestar. Sem burocracia, sem custo excessivo — só confiança e
+                        praticidade.
+                    </p>
+                    <p>
+                        Nasceu como projeto integrador do curso de Desenvolvimento de Software Multiplataforma
+                        <strong>Fatec ZL</strong>, com o objetivo de mostrar que tecnologia
+                        pode aproximar pessoas e reduzir o consumo desnecessário no dia a dia.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ── DADOS (estilo Nubank) ── -->
+            <section class="sn-dados">
+                <div style="max-width:1200px; margin:0 auto;">
+                    <h2 class="sn-dados-titulo">O que nos move</h2>
+                    <div class="sn-dados-divisor"></div>
+                    <div class="sn-dados-grid">
+
+                        <div class="sn-dado">
+                            <span class="symbols fill">handshake</span>
+                            <p>Acreditamos que emprestar um objeto cria laços reais entre pessoas — e que a comunidade cresce quando cada um contribui com o que tem.</p>
+                        </div>
+                        <div class="sn-dado">
+                            <span class="symbols fill">eco</span>
+                            <p>Cada empréstimo evita uma compra desnecessária. Queremos ser parte de uma cultura mais sustentável e consciente no consumo cotidiano.</p>
+                        </div>
+                        <div class="sn-dado">
+                            <span class="symbols fill">verified_user</span>
+                            <p>A segurança entre quem empresta e quem pega emprestado é essencial. Por isso, avaliações mútuas e perfis verificados são pilares da plataforma.</p>
+                        </div>
+                        <div class="sn-dado">
+                            <span class="symbols fill">bolt</span>
+                            <p>Simplicidade é tudo. Em poucos cliques você encontra o item que precisa perto de você — sem formulários longos ou processos confusos.</p>
+                        </div>
+                        <div class="sn-dado">
+                            <span class="symbols fill">groups</span>
+                            <p>O Ajudaí é feito para qualquer pessoa. Não é necessário ser técnico ou experiente — a plataforma foi pensada para ser intuitiva do início ao fim.</p>
+                        </div>
+                        <div class="sn-dado">
+                            <span class="symbols fill">volunteer_activism</span>
+                            <p>Quem empresta também ganha — seja em reputação, em retribuição futura ou simplesmente na satisfação de ter ajudado alguém próximo.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── MISSÃO / VISÃO / VALORES ── -->
+            <section class="sn-mvv">
+                <h2 class="sn-mvv-titulo">Missão, Visão e Valores</h2>
+                <div class="sn-mvv-divisor"></div>
+                <div class="sn-mvv-grid">
+                    <div class="sn-mvv-card">
+                        <h3>Missão</h3>
+                        <p>Conectar pessoas da mesma comunidade por meio do empréstimo de objetos simples, promovendo confiança, economia e redução do consumo desnecessário.</p>
+                    </div>
+                    <div class="sn-mvv-card">
+                        <h3>Visão</h3>
+                        <p>Ser a principal referência em empréstimos comunitários no Brasil, tornando o ato de emprestar algo tão natural quanto pedir uma informação ao vizinho.</p>
+                    </div>
+                    <div class="sn-mvv-card">
+                        <h3>Valores</h3>
+                        <p>Confiança · Comunidade · Sustentabilidade · Simplicidade · Transparência · Acessibilidade</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── EQUIPE ── -->
+            <section class="sn-equipe">
+                <h2 class="sn-equipe-titulo">Autor da idéia</h2>
+                <div class="sn-equipe-divisor"></div>
+                <div class="sn-equipe-grid">
+
+                    <!-- Membro 1 — substitua src pela foto real -->
+                    <div class="sn-membro">
+                        <div class="sn-membro-foto">
+                            <!-- <img src="../img/equipe/nome.jpg" alt="Nome do membro"> -->
+                            <div class="foto-placeholder">
+                                <span class="symbols fill">account_circle</span>
+                                Adicionar foto
+                            </div>
+                        </div>
+                        <div class="sn-membro-info">
+                            <h3>Edson Demetrio Leal</h3>
+                            <span class="cargo">Fundador do projeto Ajudaí</span>
+                            <p>Aquele que deu a idéia de ajudar milhares de pessoas. Responsável pela concepção original e visão estratégica da plataforma, pensando em uma solução prática para incentivar a economia colaborativa e o consumo consciente.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!--essa tage é onde o footer vai ser injetado pelo springboot-->
+        <footer th:replace="~{fragments :: footer}"></footer>
+
+        <script src="https://kit.fontawesome.com/2e9951a3e8.js" crossorigin="anonymous"></script>
+        <script src="/js/utilities.js"></script>
+        <script>
+            document.addEventListener('click', e => {
+                document.querySelectorAll('details.pages').forEach(d => {
+                    if (!d.contains(e.target)) d.removeAttribute('open');
+                });
+            });
+            document.querySelectorAll('details.pages').forEach(d => {
+                const link = d.querySelector('.pages-link');
+                d.addEventListener('toggle', () => {
+                    link.style.display = d.open ? 'flex' : 'none';
+                });
+            });
+        </script>
+    </body>
+</html>
